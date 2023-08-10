@@ -1,5 +1,4 @@
 import googleAuth from 'passport-google-oauth20'
-const GitHubStrategy = require('passport-github');
 import jwtPassport from 'passport-jwt';
 import localPassport from 'passport-local';
 import 'dotenv/config';
@@ -45,8 +44,8 @@ passport.use(new GoogleStrategy({
       user.accountId = profile.id;
       user.accountType = 'google';
       user.email = profile.emails[0].value;
-      user.firstName = profile.name.givenName;
-      user.lastName = profile.name.familyName;
+      user.name = `${profile.name.givenName} + '  ' + ${profile.name.familyName}`;
+  
       console.log('user ', user);
       await user.save();
       return done(null, existingUser)
@@ -77,7 +76,7 @@ passport.use(new JWTStrategy(jwtOptions, async (req: Request, payload: JWTPayLoa
   }
 }));
 
-passport.use(new LocalStrategy({ usernameField: 'mobileNumber', passwordField: 'password' },
+passport.use(new LocalStrategy({ usernameField: 'email', passwordField: 'password' },
   async (mobileNumber, password, done) => {
     try {
       
@@ -87,11 +86,16 @@ passport.use(new LocalStrategy({ usernameField: 'mobileNumber', passwordField: '
       if (!user) {
         return done({message:'user not found'}, false);
       };
-      const passwordMatch = await bcrypt.compare(password, user.password);
-      if (!password) {
-        return done({ message: 'password did not match' }, false);
-      };
-      return done(null, user);
+      if (user.hashedPassword === undefined) {
+        new Error("Password cannot be undefined")
+      } else {
+        const passwordMatch = await bcrypt.compare(password, user.hashedPassword);
+        if (!passwordMatch) {
+          return done({ message: 'password did not match' }, false);
+        };
+        return done(null, user);   
+      }
+      
     } catch (error) {
       console.log('error in local login ', error);
       return done(error, false);

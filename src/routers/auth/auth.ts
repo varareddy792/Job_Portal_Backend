@@ -3,6 +3,7 @@ import passport from '../../config/passport';
 import { sign, Secret, JwtPayload, SignOptions } from 'jsonwebtoken';
 import 'dotenv/config';
 import { jwtSign } from '../../utils/jwtSign';
+import { registerUser } from '../../controllers/user/userController';
 
 let JWT_SECRET: Secret;
 if (!process.env.JWT_SECRET) {
@@ -40,6 +41,8 @@ authRouter.get('/api/current_user', (req, res) => {
 
 authRouter.post('/login', passport.authenticate('local'), (error, user) => {
   
-})
+});
+
+authRouter.post('/register', registerUser);
 
 export default authRouter;
