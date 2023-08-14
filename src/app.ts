@@ -1,21 +1,20 @@
-import express, { Express, NextFunction } from 'express';
+import express, { Express, NextFunction, Response } from 'express';
 import cors from 'cors';
-import bodyParser from 'body-parser';
+import* as bodyParser from 'body-parser';
 import router from './routers';
 import { errorHandler } from './middlewares/errorHandler';
 import { AppDataSource } from './config/typeorm';
-import passport = require('passport');
-import session = require('express-session');
+import passport from 'passport';
+import session from 'express-session';
 
 AppDataSource.initialize().then(() => {
   console.log('Db connected')
 }).catch((error) => {
-  console.log('Unable to connect to database ', error)
+  console.log('Unable to connect to database ', error);
 });
 
 const app: Express = express();
 app.use(cors());
-app.use(bodyParser.json());
 
 // Google Auth and Facebook Auth
 app.use(session({
@@ -26,8 +25,12 @@ app.use(session({
 
 app.use(passport.initialize());
 app.use(passport.session());
-app.use(router);
 
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+
+app.use(router);
 
 /// catch 404 and forward to error handler
 app.use((req, res, next:NextFunction) => {
