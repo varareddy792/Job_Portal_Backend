@@ -17,7 +17,8 @@
     "prettier-watch:darwin:linux": "onchange 'src/**/*.ts' -- prettier --write {{changed}}",
     "prettier-watch:default": "onchange 'src/**/*.ts' -- prettier --write {{changed}}",
     "test": "jest",
-    "test:dev": "jest --watchAll"
+    "test:dev": "jest --watchAll",
+    "seed:run": "ts-node ./node_modules/typeorm-extension/bin/cli.cjs seed:run"
   },
   "engines": {
     "node": "18.12.1",
@@ -73,6 +74,7 @@
     "passport-local": "^1.0.0",
     "ts-node-dev": "^2.0.0",
     "typeorm": "^0.3.17",
+    "typeorm-extension": "^3.0.1",
     "util": "^0.12.5"
   }
 }
