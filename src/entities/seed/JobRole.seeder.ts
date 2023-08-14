@@ -9,27 +9,83 @@ export default class JobRoleSeeder implements Seeder {
     const repository = dataSource.getRepository(JobRole);
     await repository.upsert([
       {
-        title: '15 Days or less',
+        title: 'Additive Manufacturing (3D Printing)',
         status: true,
       },
       {
-        title: '1 Month',
+        title: 'Application Engineer',
         status: true,
       },
       {
-        title: '2 Months',
+        title: 'Assembly Engineer',
         status: true,
       },
       {
-        title: '3 Months',
+        title: 'Automation Engineer',
         status: true,
       },
       {
-        title: 'More than 3 Months',
+        title: 'Design Engineer',
         status: true,
       },
       {
-        title: 'Serving Notice Period',
+        title: 'Electrical / Electronics Engineer',
+        status: true,
+      },
+      {
+        title: 'Environmental Engineer',
+        status: true,
+      },
+      {
+        title: 'Industrial Engineer',
+        status: true,
+      },
+      {
+        title: 'Instrumentation Engineer',
+        status: true,
+      },
+      {
+        title: 'Manufacturing Engineer',
+        status: true,
+      },
+      {
+        title: 'Manufacturing Engineering Manager',
+        status: true,
+      },
+      {
+        title: 'Mechanical Engineer',
+        status: true,
+      },
+      {
+        title: 'Mechatronics Engineer',
+        status: true,
+      },
+      {
+        title: 'MEP Engineer',
+        status: true,
+      },
+      {
+        title: 'PPC Engineer',
+        status: true,
+      },
+      {
+        title: 'Process Engineer',
+        status: true,
+      },
+      {
+        title: 'Product Engineer',
+        status: true,
+      },
+      {
+        title: 'Production Engineer',
+        status: true,
+      },
+      {
+        title: 'Tool Room Engineer',
+        status: true,
+      },
+      {
+        title: 'Engineering - Other',
         status: true,
       }
     ],

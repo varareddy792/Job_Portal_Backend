@@ -1,13 +1,12 @@
 import { Seeder } from 'typeorm-extension';
 import { DataSource } from 'typeorm';
-import { City } from '../City';
-import { State } from '../State';
+import { Location } from '../Location';
 
-export default class CitySeeder implements Seeder {
+export default class LocationSeeder implements Seeder {
   public async run(
     dataSource: DataSource,
   ): Promise<any> {
-    const repository = dataSource.getRepository(City);
+    const repository = dataSource.getRepository(Location);
     await repository.upsert([
       {
         title: 'Port Blair',

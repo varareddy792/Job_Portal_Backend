@@ -1,6 +1,6 @@
 import 'reflect-metadata';
 import { DataSource, DataSourceOptions } from 'typeorm';
-import { runSeeders, SeederOptions } from 'typeorm-extension';
+import { SeederOptions } from 'typeorm-extension';
 import 'dotenv/config';
 import { User } from '../entities/User';
 import { Employment } from '../entities/Employment';
@@ -33,6 +33,21 @@ import { RoleCategory } from '../entities/RoleCategory';
 import { JobRole } from '../entities/JobRole';
 import RoleCategorySeeder from '../entities/seed/RoleCategory.seeder';
 import JobRoleSeeder from '../entities/seed/JobRole.seeder';
+import { Education } from '../entities/Education';
+import { HighestQualification } from '../entities/HighestQualification';
+import HighestQualificationSeeder from '../entities/seed/HighestQualification.seeder';
+import { Course } from '../entities/Course';
+import CourseSeeder from '../entities/seed/Course.seeder';
+import { Specialization } from '../entities/Specialization';
+import SpecializationSeeder from '../entities/seed/Specialization.seeder';
+import { CourseType } from '../entities/CourseType';
+import CourseTypeSeeder from '../entities/seed/CourseType.seeder';
+import { UniversityInstitute } from '../entities/UniversityInstitute';
+import UniversityInstituteSeeder from '../entities/seed/UniversityInstitute.seeder';
+import { Gender } from '../entities/Gender';
+import GenderSeeder from '../entities/seed/Gender.seeder';
+import { Location } from '../entities/Location';
+import LocationSeeder from '../entities/seed/Location.seeder';
 
 if (process.env.DB_NAME === undefined) {
   throw new Error('Dbname cannot be undefined')
@@ -70,8 +85,8 @@ const options: DataSourceOptions & SeederOptions = {
   database: process.env.DB_NAME,
   synchronize: true,
   logging: true,
-  entities: [User, JobSeeker, Employment, TotalExpYear, TotalExpMonth, Company, JobTitle, Currency, State, City, NoticePeriod, AvailabilityToJoin, KeySkills, Industry, Department, RoleCategory, JobRole],
-  seeds: [TotalExpYearSeeder, TotalExpMonthSeeder, CompanySeeder, JobTitleSeeder, CurrencySeeder, StateSeeder, CitySeeder, NoticePeriodSeeder, AvailabilityToJoinSeeder, KeySkillsSeeder, IndustrySeeder, DepartmentSeeder, RoleCategorySeeder, JobRoleSeeder],
+  entities: [User, JobSeeker, Employment, TotalExpYear, TotalExpMonth, Company, JobTitle, Currency, State, City, NoticePeriod, AvailabilityToJoin, KeySkills, Industry, Department, RoleCategory, JobRole, Education, HighestQualification, Course, Specialization, CourseType, UniversityInstitute, Gender, Location],
+  seeds: [TotalExpYearSeeder, TotalExpMonthSeeder, CompanySeeder, JobTitleSeeder, CurrencySeeder, StateSeeder, CitySeeder, NoticePeriodSeeder, AvailabilityToJoinSeeder, KeySkillsSeeder, IndustrySeeder, DepartmentSeeder, RoleCategorySeeder, JobRoleSeeder, HighestQualificationSeeder, CourseSeeder, SpecializationSeeder, CourseTypeSeeder, UniversityInstituteSeeder, GenderSeeder, LocationSeeder],
   subscribers: [],
   migrations: [],
 }
