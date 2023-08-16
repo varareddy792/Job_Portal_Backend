@@ -18,7 +18,7 @@ import CurrencySeeder from '../entities/seed/Currency.seeder';
 import { State } from '../entities/State';
 import { City } from '../entities/City';
 import StateSeeder from '../entities/seed/State.seeder';
-import CitySeeder from '../entities/seed/City.seeder';
+// import CitySeeder from '../entities/seed/City.seeder';
 import { NoticePeriod } from '../entities/NoticePeriod';
 import NoticePeriodSeeder from '../entities/seed/NoticePeriod.seeder';
 import { AvailabilityToJoin } from '../entities/AvailabilityToJoin';
@@ -86,7 +86,7 @@ const options: DataSourceOptions & SeederOptions = {
   synchronize: true,
   logging: true,
   entities: [User, JobSeeker, Employment, TotalExpYear, TotalExpMonth, Company, JobTitle, Currency, State, City, NoticePeriod, AvailabilityToJoin, KeySkills, Industry, Department, RoleCategory, JobRole, Education, HighestQualification, Course, Specialization, CourseType, UniversityInstitute, Gender, Location],
-  seeds: [TotalExpYearSeeder, TotalExpMonthSeeder, CompanySeeder, JobTitleSeeder, CurrencySeeder, StateSeeder, CitySeeder, NoticePeriodSeeder, AvailabilityToJoinSeeder, KeySkillsSeeder, IndustrySeeder, DepartmentSeeder, RoleCategorySeeder, JobRoleSeeder, HighestQualificationSeeder, CourseSeeder, SpecializationSeeder, CourseTypeSeeder, UniversityInstituteSeeder, GenderSeeder, LocationSeeder],
+  seeds: [TotalExpYearSeeder, TotalExpMonthSeeder, CompanySeeder, JobTitleSeeder, CurrencySeeder, StateSeeder, NoticePeriodSeeder, AvailabilityToJoinSeeder, KeySkillsSeeder, IndustrySeeder, DepartmentSeeder, RoleCategorySeeder, JobRoleSeeder, HighestQualificationSeeder, CourseSeeder, SpecializationSeeder, CourseTypeSeeder, UniversityInstituteSeeder, GenderSeeder, LocationSeeder],
   subscribers: [],
   migrations: [],
 }
