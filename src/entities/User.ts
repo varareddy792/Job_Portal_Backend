@@ -8,32 +8,27 @@ export class User extends BaseEntity {
   @Column()
   name!: string
 
-  @Column({nullable:false})
+  @Column({ nullable: false })
   email!: string
 
-  @Column({default:null})
+  @Column({ default: null })
   accountType!: string
-  
-  @Column({default:null})
+
+  @Column({ default: null })
   accountId!: string
 
-  @Column()
+  @Column({ default: null })
   mobileNumber!: string
 
-  @Column({default:null})
+  @Column({ default: null })
   hashedPassword?: string
 
-  @Column({default:false})
-  isEmailVerified!: boolean
-  
-  @Column({default:false})
-  isMobileVerified!: boolean
-  
-  @Column()
-  resumePath!: string
-  
-  @Column({default:false})
-  isExperienced!: boolean
-  
-  
+  @Column({ default: null })
+  userType!: string
+  // @Column({default:false})
+  // isEmailVerified!: boolean
+
+  // @Column({default:false})
+  // isMobileVerified!: boolean
+
 }
