@@ -1,7 +1,6 @@
 
 import { Request, response, NextFunction, Response } from 'express';
 import 'dotenv/config';
-import { User } from '../entities/User';
 import jwt, { Secret } from 'jsonwebtoken'
 
 export const jwtSign = (req: Request, res: Response, next: NextFunction) => {

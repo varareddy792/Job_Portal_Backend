@@ -7,6 +7,7 @@ import { AppDataSource } from './config/typeorm';
 import passport from 'passport';
 import session from 'express-session';
 import { runSeeders } from 'typeorm-extension';
+import logger from 'morgan';
 
 (async () => {
   AppDataSource.initialize().then(() => {
@@ -34,7 +35,7 @@ app.use(passport.session());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-
+app.use(logger('dev'))
 app.use(router);
 
 /// catch 404 and forward to error handler
