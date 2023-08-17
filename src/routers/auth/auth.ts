@@ -4,6 +4,7 @@ import { sign, Secret, JwtPayload, SignOptions } from 'jsonwebtoken';
 import 'dotenv/config';
 import { jwtSign } from '../../utils/jwtSign';
 import { registerUser } from '../../controllers/user/userController';
+import { Request } from 'express-jwt';
 
 let JWT_SECRET: Secret;
 if (!process.env.JWT_SECRET) {
@@ -29,13 +30,17 @@ authRouter.get('/google/callback',
   passport.authenticate('google'),
   jwtSign
 )
-authRouter.get('/api/logout', (req, res) => {
-
+authRouter.get('/logout', (req:Request, res, next) => {
+  req.logOut(function (err) {
+    if (err) {
+      return next(err)
+    }
+  })
   res.send(req.user);
 });
 
-authRouter.get('/api/current_user', (req, res) => {
-  res.send(req.user);
+authRouter.get('/current_user', passport.authenticate('jwt'), (req, res) => {
+  res.send({ data: req.user });
 });
 
 authRouter.post('/login', passport.authenticate('local'), jwtSign);

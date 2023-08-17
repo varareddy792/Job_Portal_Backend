@@ -1,5 +1,5 @@
 import { Entity, PrimaryGeneratedColumn, Column, BaseEntity, ManyToOne } from 'typeorm';
-import { JobSeeker } from './JobSeeker';
+import { JobSeekerProfile } from './JobSeekerProfile';
 
 @Entity()
 export class Employment extends BaseEntity {
@@ -9,7 +9,7 @@ export class Employment extends BaseEntity {
   @Column()
   jobSeekerId!: string;
 
-  @ManyToOne(type => JobSeeker, jobSeeker => jobSeeker.id) jobSeeker!: JobSeeker;
+  @ManyToOne(type => JobSeekerProfile, jobSeekerProfile => jobSeekerProfile.id) jobSeekerProfile!: JobSeekerProfile;
 
   @Column()
   currentlyEmployed!: boolean

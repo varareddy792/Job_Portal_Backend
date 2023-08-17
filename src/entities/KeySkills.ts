@@ -1,4 +1,5 @@
 import { Entity, PrimaryGeneratedColumn, Column, BaseEntity, ManyToOne } from 'typeorm';
+import { JobSeekerProfile } from './JobSeekerProfile';
 
 @Entity()
 export class KeySkills extends BaseEntity {
@@ -10,5 +11,8 @@ export class KeySkills extends BaseEntity {
 
   @Column()
   status!: boolean
+
+  @ManyToOne(() => JobSeekerProfile, (jobSeekerProfile) => jobSeekerProfile.keySkills)
+  jobSeekerProfile!:JobSeekerProfile
 
 }

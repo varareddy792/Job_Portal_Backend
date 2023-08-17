@@ -4,7 +4,7 @@ import { SeederOptions } from 'typeorm-extension';
 import 'dotenv/config';
 import { User } from '../entities/User';
 import { Employment } from '../entities/Employment';
-import { JobSeeker } from '../entities/JobSeeker';
+import { JobSeekerProfile } from '../entities/JobSeekerProfile';
 import { TotalExpYear } from '../entities/TotalExpYear';
 import TotalExpYearSeeder from '../entities/seed/TotalExpYear.seeder';
 import { TotalExpMonth } from '../entities/TotalExpMonth';
@@ -85,7 +85,7 @@ const options: DataSourceOptions & SeederOptions = {
   database: process.env.DB_NAME,
   synchronize: true,
   logging: true,
-  entities: [User, JobSeeker, Employment, TotalExpYear, TotalExpMonth, Company, JobTitle, Currency, State, City, NoticePeriod, AvailabilityToJoin, KeySkills, Industry, Department, RoleCategory, JobRole, Education, HighestQualification, Course, Specialization, CourseType, UniversityInstitute, Gender, Location],
+  entities: [User, JobSeekerProfile, Employment, TotalExpYear, TotalExpMonth, Company, JobTitle, Currency, State, City, NoticePeriod, AvailabilityToJoin, KeySkills, Industry, Department, RoleCategory, JobRole, Education, HighestQualification, Course, Specialization, CourseType, UniversityInstitute, Gender, Location],
   seeds: [TotalExpYearSeeder, TotalExpMonthSeeder, CompanySeeder, JobTitleSeeder, CurrencySeeder, StateSeeder, NoticePeriodSeeder, AvailabilityToJoinSeeder, KeySkillsSeeder, IndustrySeeder, DepartmentSeeder, RoleCategorySeeder, JobRoleSeeder, HighestQualificationSeeder, CourseSeeder, SpecializationSeeder, CourseTypeSeeder, UniversityInstituteSeeder, GenderSeeder, LocationSeeder],
   subscribers: [],
   migrations: [],
