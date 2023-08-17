@@ -1,5 +1,6 @@
 import { Entity, PrimaryGeneratedColumn, Column, BaseEntity, ManyToOne } from 'typeorm';
-import { JobSeeker } from './JobSeeker';
+import { JobSeekerProfile } from './JobSeekerProfile';
+import { User } from './User';
 
 @Entity()
 export class Education extends BaseEntity {
@@ -9,7 +10,8 @@ export class Education extends BaseEntity {
   @Column()
   jobSeekerId!: string;
 
-  @ManyToOne(type => JobSeeker, jobSeeker => jobSeeker.id) jobSeeker!: JobSeeker;
+  @ManyToOne(() => JobSeekerProfile, (jobSeekerProfile) => jobSeekerProfile.educations)
+  jobSeeker!: JobSeekerProfile
 
   @Column()
   highestQualification!: string
