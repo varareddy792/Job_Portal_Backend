@@ -27,8 +27,7 @@ authRouter.get(
 );
 authRouter.get('/google/callback',
   passport.authenticate('google'),
-  jwtSign, (req, res) => {
-  }
+  jwtSign
 )
 authRouter.get('/api/logout', (req, res) => {
 
@@ -39,9 +38,7 @@ authRouter.get('/api/current_user', (req, res) => {
   res.send(req.user);
 });
 
-authRouter.post('/login', passport.authenticate('local'), (error, user) => {
-  
-});
+authRouter.post('/login', passport.authenticate('local'), jwtSign);
 
 authRouter.post('/register', registerUser);
 

@@ -44,11 +44,9 @@ passport.use(new GoogleStrategy({
       user.accountId = profile.id;
       user.accountType = 'google';
       user.email = profile.emails[0].value;
-      user.name = `${profile.name.givenName} + '  ' + ${profile.name.familyName}`;
-  
-      console.log('user ', user);
+      user.name = `${profile.name.givenName}   ${profile.name.familyName}`;
       await user.save();
-      return done(null, existingUser)
+      return done(null, user)
     } catch (error) {
       console.log('error ', error);
       return done(error, false)
@@ -77,11 +75,11 @@ passport.use(new JWTStrategy(jwtOptions, async (req: Request, payload: JWTPayLoa
 }));
 
 passport.use(new LocalStrategy({ usernameField: 'email', passwordField: 'password' },
-  async (mobileNumber, password, done) => {
+  async (email, password, done) => {
     try {
-      
+      console.log()
       const user = await User.findOneBy({
-        mobileNumber
+        email
       });
       if (!user) {
         return done({message:'user not found'}, false);
