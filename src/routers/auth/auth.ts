@@ -35,7 +35,7 @@ authRouter.get('/google/callback',
 )
 authRouter.get('/logout', (req: Request, res:Response, next) => {
   res.cookie('token', null);
-  res.redirect('http://localhost:3000/homePage')
+  res.redirect('http://localhost:3000/')
 });
 
 authRouter.get('/current_user', passport.authenticate('jwt'), (req, res) => {
