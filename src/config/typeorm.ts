@@ -48,6 +48,7 @@ import { Gender } from '../entities/Gender';
 import GenderSeeder from '../entities/seed/Gender.seeder';
 import { Location } from '../entities/Location';
 import LocationSeeder from '../entities/seed/Location.seeder';
+import CitySeeder from '../entities/seed/City.seeder';
 
 if (process.env.DB_NAME === undefined) {
   throw new Error('Dbname cannot be undefined')

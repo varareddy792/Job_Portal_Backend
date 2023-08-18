@@ -11,2154 +11,772 @@ export default class CitySeeder implements Seeder {
     await repository.upsert([
       {
         title: 'Port Blair',
+        stateId: 1,
         status: true,
       },
       {
         title: 'Andhra Pradesh',
+        stateId: 1,
         status: true,
       },
       {
-        title: 'Adoni',
+        title: 'Adoni', stateId: 1,
         status: true,
       },
       {
-        title: 'Amaravati',
+        title: 'Amaravati', stateId: 1,
         status: true,
       },
       {
-        title: 'Anantapur',
+        title: 'Anantapur', stateId: 1,
         status: true,
       },
       {
-        title: 'Chandragiri',
+        title: 'Chandragiri', stateId: 1,
         status: true,
       },
       {
-        title: 'Chittoor',
+        title: 'Chittoor', stateId: 1,
         status: true,
       },
       {
-        title: 'Dowlaiswaram',
+        title: 'Dowlaiswaram', stateId: 1,
         status: true,
       },
       {
-        title: 'Eluru',
+        title: 'Eluru', stateId: 1,
         status: true,
       },
       {
-        title: 'Guntur',
+        title: 'Guntur', stateId: 1,
         status: true,
       },
       {
-        title: 'Kadapa',
+        title: 'Kadapa', stateId: 1,
         status: true,
       },
       {
-        title: 'Kakinada',
+        title: 'Kakinada', stateId: 1,
         status: true,
       },
       {
-        title: 'Kurnool',
+        title: 'Kurnool', stateId: 1,
         status: true,
       },
       {
-        title: 'Machilipatnam',
+        title: 'Machilipatnam', stateId: 1,
         status: true,
       },
       {
-        title: 'Nagarjunakoṇḍa',
+        title: 'Nagarjunakoṇḍa', stateId: 1,
         status: true,
       },
       {
-        title: 'Rajahmundry',
+        title: 'Rajahmundry', stateId: 1,
         status: true,
       },
       {
-        title: 'Srikakulam',
+        title: 'Srikakulam', stateId: 1,
         status: true,
       },
       {
-        title: 'Tirupati',
+        title: 'Tirupati', stateId: 1,
         status: true,
       },
       {
-        title: 'Vijayawada',
+        title: 'Vijayawada', stateId: 1,
         status: true,
       },
       {
-        title: 'Visakhapatnam',
+        title: 'Visakhapatnam', stateId: 1,
         status: true,
       },
       {
-        title: 'Vizianagaram',
+        title: 'Vizianagaram', stateId: 1,
         status: true,
       },
       {
-        title: 'Yemmiganur',
+        title: 'Yemmiganur', stateId: 1,
         status: true,
       },
       {
-        title: 'Arunachal Pradesh',
+        title: 'Arunachal Pradesh', stateId: 1,
         status: true,
       },
       {
-        title: 'Itanagar',
+        title: 'Itanagar', stateId: 1,
         status: true,
       },
       {
-        title: 'Assam',
+        title: 'Assam', stateId: 1,
         status: true,
       },
       {
-        title: 'Dhuburi',
+        title: 'Dhuburi', stateId: 1,
         status: true,
       },
       {
-        title: 'Dibrugarh',
+        title: 'Dibrugarh', stateId: 1,
         status: true,
       },
       {
-        title: 'Dispur',
+        title: 'Dispur', stateId: 1,
         status: true,
       },
       {
-        title: 'Guwahati',
+        title: 'Guwahati', stateId: 1,
         status: true,
       },
       {
-        title: 'Jorhat',
+        title: 'Jorhat', stateId: 1,
         status: true,
       },
       {
-        title: 'Nagaon',
+        title: 'Nagaon', stateId: 1,
         status: true,
       },
       {
-        title: 'Sivasagar',
+        title: 'Sivasagar', stateId: 1,
         status: true,
       },
       {
-        title: 'Silchar',
+        title: 'Silchar', stateId: 1,
         status: true,
       },
       {
-        title: 'Tezpur',
+        title: 'Tezpur', stateId: 1,
         status: true,
       },
       {
-        title: 'Tinsukia',
+        title: 'Tinsukia', stateId: 1,
         status: true,
       },
       {
-        title: 'Bihar',
+        title: 'Bihar', stateId: 1,
         status: true,
       },
       {
-        title: 'Ara',
+        title: 'Ara', stateId: 1,
         status: true,
       },
       {
-        title: 'Barauni',
+        title: 'Barauni', stateId: 1,
         status: true,
       },
       {
-        title: 'Begusarai',
+        title: 'Begusarai', stateId: 1,
         status: true,
       },
       {
-        title: 'Bettiah',
+        title: 'Bettiah', stateId: 1,
         status: true,
       },
       {
-        title: 'Bhagalpur',
+        title: 'Bhagalpur', stateId: 1,
         status: true,
       },
       {
-        title: 'Bihar Sharif',
+        title: 'Bihar Sharif', stateId: 1,
         status: true,
       },
       {
-        title: 'Bodh Gaya',
+        title: 'Bodh Gaya', stateId: 1,
         status: true,
       },
       {
-        title: 'Buxar',
+        title: 'Buxar', stateId: 1,
         status: true,
       },
       {
-        title: 'Chapra',
+        title: 'Chapra', stateId: 1,
         status: true,
       },
       {
-        title: 'Darbhanga',
+        title: 'Darbhanga', stateId: 1,
         status: true,
       },
       {
-        title: 'Dehri',
+        title: 'Dehri', stateId: 1,
         status: true,
       },
       {
-        title: 'Dinapur Nizamat',
+        title: 'Dinapur Nizamat', stateId: 1,
         status: true,
       },
       {
-        title: 'Gaya',
+        title: 'Gaya', stateId: 1,
         status: true,
       },
       {
-        title: 'Hajipur',
+        title: 'Hajipur', stateId: 1,
         status: true,
       },
       {
-        title: 'Jamalpur',
+        title: 'Jamalpur', stateId: 1,
         status: true,
       },
       {
-        title: 'Katihar',
+        title: 'Katihar', stateId: 1,
         status: true,
       },
       {
-        title: 'Madhubani',
+        title: 'Madhubani', stateId: 1,
         status: true,
       },
       {
-        title: 'Motihari',
+        title: 'Motihari', stateId: 1,
         status: true,
       },
       {
-        title: 'Munger',
+        title: 'Munger', stateId: 1,
         status: true,
       },
       {
-        title: 'Muzaffarpur',
+        title: 'Muzaffarpur', stateId: 1,
         status: true,
       },
       {
-        title: 'Patna',
+        title: 'Patna', stateId: 1,
         status: true,
       },
       {
-        title: 'Purnia',
+        title: 'Purnia', stateId: 1,
         status: true,
       },
       {
-        title: 'Pusa',
+        title: 'Pusa', stateId: 1,
         status: true,
       },
       {
-        title: 'Saharsa',
+        title: 'Saharsa', stateId: 1,
         status: true,
       },
       {
-        title: 'Samastipur',
+        title: 'Samastipur', stateId: 1,
         status: true,
       },
       {
-        title: 'Sasaram',
+        title: 'Sasaram', stateId: 1,
         status: true,
       },
       {
-        title: 'Sitamarhi',
+        title: 'Sitamarhi', stateId: 1,
         status: true,
       },
       {
-        title: 'Siwan',
+        title: 'Siwan', stateId: 1,
         status: true,
       },
       {
-        title: 'Chandigarh (union territory)',
+        title: 'Chandigarh (union territory)', stateId: 1,
         status: true,
       },
       {
-        title: 'Chhattisgarh',
+        title: 'Chhattisgarh', stateId: 1,
         status: true,
       },
       {
-        title: 'Ambikapur',
+        title: 'Ambikapur', stateId: 1,
         status: true,
       },
       {
-        title: 'Bhilai',
+        title: 'Bhilai', stateId: 1,
         status: true,
       },
       {
-        title: 'Dhamtari',
+        title: 'Dhamtari', stateId: 1,
         status: true,
       },
       {
-        title: 'Durg',
+        title: 'Durg', stateId: 1,
         status: true,
       },
       {
-        title: 'Jagdalpur',
+        title: 'Jagdalpur', stateId: 1,
         status: true,
       },
       {
-        title: 'Raipur',
+        title: 'Raipur', stateId: 1,
         status: true,
       },
       {
-        title: 'Rajnandgaon',
+        title: 'Rajnandgaon', stateId: 1,
         status: true,
       },
       {
-        title: 'Dadra and Nagar Haveli and Daman and Diu (union territory)',
+        title: 'Dadra and Nagar Haveli and Daman and Diu (union territory)', stateId: 1,
         status: true,
       },
       {
-        title: 'Daman',
+        title: 'Daman', stateId: 1,
         status: true,
       },
       {
-        title: 'Diu',
+        title: 'Diu', stateId: 1,
         status: true,
       },
       {
-        title: 'Silvassa',
+        title: 'Silvassa', stateId: 1,
         status: true,
       },
       {
-        title: 'Delhi (national capital territory)',
+        title: 'Delhi (national capital territory)', stateId: 1,
         status: true,
       },
       {
-        title: 'Delhi',
+        title: 'Delhi', stateId: 1,
         status: true,
       },
       {
-        title: 'New Delhi',
+        title: 'New Delhi', stateId: 1,
         status: true,
       },
       {
-        title: 'Goa',
+        title: 'Goa', stateId: 1,
         status: true,
       },
       {
-        title: 'Madgaon',
+        title: 'Madgaon', stateId: 1,
         status: true,
       },
       {
-        title: 'Panaji',
+        title: 'Panaji', stateId: 1,
         status: true,
       },
       {
-        title: 'Gujarat',
+        title: 'Gujarat', stateId: 1,
         status: true,
       },
       {
-        title: 'Ahmadabad',
+        title: 'Ahmadabad', stateId: 1,
         status: true,
       },
       {
-        title: 'Amreli',
+        title: 'Amreli', stateId: 1,
         status: true,
       },
       {
-        title: 'Bharuch',
+        title: 'Bharuch', stateId: 1,
         status: true,
       },
       {
-        title: 'Bhavnagar',
+        title: 'Bhavnagar', stateId: 1,
         status: true,
       },
       {
-        title: 'Bhuj',
+        title: 'Bhuj', stateId: 1,
         status: true,
       },
       {
-        title: 'Dwarka',
+        title: 'Dwarka', stateId: 1,
         status: true,
       },
       {
-        title: 'Gandhinagar',
+        title: 'Gandhinagar', stateId: 1,
         status: true,
       },
       {
-        title: 'Godhra',
+        title: 'Godhra', stateId: 1,
         status: true,
       },
       {
-        title: 'Jamnagar',
+        title: 'Jamnagar', stateId: 1,
         status: true,
       },
       {
-        title: 'Junagadh',
+        title: 'Junagadh', stateId: 1,
         status: true,
       },
       {
-        title: 'Kandla',
+        title: 'Kandla', stateId: 1,
         status: true,
       },
       {
-        title: 'Khambhat',
+        title: 'Khambhat', stateId: 1,
         status: true,
       },
       {
-        title: 'Kheda',
+        title: 'Kheda', stateId: 1,
         status: true,
       },
       {
-        title: 'Mahesana',
+        title: 'Mahesana', stateId: 1,
         status: true,
       },
       {
-        title: 'Morbi',
+        title: 'Morbi', stateId: 1,
         status: true,
       },
       {
-        title: 'Nadiad',
+        title: 'Nadiad', stateId: 1,
         status: true,
       },
       {
-        title: 'Navsari',
+        title: 'Navsari', stateId: 1,
         status: true,
       },
       {
-        title: 'Okha',
+        title: 'Okha', stateId: 1,
         status: true,
       },
       {
-        title: 'Palanpur',
+        title: 'Palanpur', stateId: 1,
         status: true,
       },
       {
-        title: 'Patan',
+        title: 'Patan', stateId: 1,
         status: true,
       },
       {
-        title: 'Porbandar',
+        title: 'Porbandar', stateId: 1,
         status: true,
       },
       {
-        title: 'Rajkot',
+        title: 'Rajkot', stateId: 1,
         status: true,
       },
       {
-        title: 'Surat',
+        title: 'Surat', stateId: 1,
         status: true,
       },
       {
-        title: 'Surendranagar',
+        title: 'Surendranagar', stateId: 1,
         status: true,
       },
       {
-        title: 'Valsad',
+        title: 'Valsad', stateId: 1,
         status: true,
       },
       {
-        title: 'Veraval',
+        title: 'Veraval', stateId: 1,
         status: true,
       },
       {
-        title: 'Haryana',
+        title: 'Haryana', stateId: 1,
         status: true,
       },
       {
-        title: 'Ambala',
+        title: 'Ambala', stateId: 1,
         status: true,
       },
       {
-        title: 'Bhiwani',
+        title: 'Bhiwani', stateId: 1,
         status: true,
       },
       {
-        title: 'Faridabad',
+        title: 'Faridabad', stateId: 1,
         status: true,
       },
       {
-        title: 'Firozpur Jhirka',
+        title: 'Firozpur Jhirka', stateId: 1,
         status: true,
       },
       {
-        title: 'Gurugram',
+        title: 'Gurugram', stateId: 1,
         status: true,
       },
       {
-        title: 'Hansi',
+        title: 'Hansi', stateId: 1,
         status: true,
       },
       {
-        title: 'Hisar',
+        title: 'Hisar', stateId: 1,
         status: true,
       },
       {
-        title: 'Jind',
+        title: 'Jind', stateId: 1,
         status: true,
       },
       {
-        title: 'Kaithal',
+        title: 'Kaithal', stateId: 1,
         status: true,
       },
       {
-        title: 'Karnal',
+        title: 'Karnal', stateId: 1,
         status: true,
       },
       {
-        title: 'Kurukshetra',
+        title: 'Kurukshetra', stateId: 2,
         status: true,
       },
       {
-        title: 'Panipat',
+        title: 'Panipat', stateId: 2,
         status: true,
       },
       {
-        title: 'Pehowa',
+        title: 'Pehowa', stateId: 2,
         status: true,
       },
       {
-        title: 'Rewari',
+        title: 'Rewari', stateId: 2,
         status: true,
       },
       {
-        title: 'Rohtak',
+        title: 'Rohtak', stateId: 2,
         status: true,
       },
       {
-        title: 'Sirsa',
+        title: 'Sirsa', stateId: 2,
         status: true,
       },
       {
-        title: 'Sonipat',
+        title: 'Sonipat', stateId: 2,
         status: true,
       },
       {
-        title: 'Himachal Pradesh',
+        title: 'Himachal Pradesh', stateId: 2,
         status: true,
       },
       {
-        title: 'Bilaspur',
+        title: 'Bilaspur', stateId: 2,
         status: true,
       },
       {
-        title: 'Chamba',
+        title: 'Chamba', stateId: 2,
         status: true,
       },
       {
-        title: 'Dalhousie',
+        title: 'Dalhousie', stateId: 2,
         status: true,
       },
       {
-        title: 'Dharmshala',
+        title: 'Dharmshala', stateId: 2,
         status: true,
       },
       {
-        title: 'Kangra',
+        title: 'Kangra', stateId: 2,
         status: true,
       },
       {
-        title: 'Kullu',
+        title: 'Kullu', stateId: 2,
         status: true,
       },
       {
-        title: 'Mandi',
+        title: 'Mandi', stateId: 2,
         status: true,
       },
       {
-        title: 'Nahan',
+        title: 'Nahan', stateId: 2,
         status: true,
       },
       {
-        title: 'Shimla',
+        title: 'Shimla', stateId: 2,
         status: true,
       },
       {
-        title: 'Una',
+        title: 'Una', stateId: 2,
         status: true,
       },
       {
-        title: 'Jammu and Kashmir (union territory)',
+        title: 'Jammu and Kashmir (union territory)', stateId: 2,
         status: true,
       },
       {
-        title: 'Anantnag',
+        title: 'Anantnag', stateId: 2,
         status: true,
       },
       {
-        title: 'Baramula',
+        title: 'Baramula', stateId: 2,
         status: true,
       },
       {
-        title: 'Doda',
+        title: 'Doda', stateId: 2,
         status: true,
       },
       {
-        title: 'Gulmarg',
+        title: 'Gulmarg', stateId: 2,
         status: true,
       },
       {
-        title: 'Jammu',
+        title: 'Jammu', stateId: 2,
         status: true,
       },
       {
-        title: 'Kathua',
+        title: 'Kathua', stateId: 2,
         status: true,
       },
       {
-        title: 'Punch',
+        title: 'Punch', stateId: 2,
         status: true,
       },
       {
-        title: 'Rajouri',
+        title: 'Rajouri', stateId: 2,
         status: true,
       },
       {
-        title: 'Srinagar',
+        title: 'Srinagar', stateId: 2,
         status: true,
       },
       {
-        title: 'Udhampur',
+        title: 'Udhampur', stateId: 2,
         status: true,
       },
       {
-        title: 'Jharkhand',
+        title: 'Jharkhand', stateId: 2,
         status: true,
       },
       {
-        title: 'Bokaro',
+        title: 'Bokaro', stateId: 2,
         status: true,
       },
       {
-        title: 'Chaibasa',
+        title: 'Chaibasa', stateId: 2,
         status: true,
       },
       {
-        title: 'Deoghar',
+        title: 'Deoghar', stateId: 2,
         status: true,
       },
       {
-        title: 'Dhanbad',
+        title: 'Dhanbad', stateId: 2,
         status: true,
       },
       {
-        title: 'Dumka',
+        title: 'Dumka', stateId: 2,
         status: true,
       },
       {
-        title: 'Giridih',
+        title: 'Giridih', stateId: 2,
         status: true,
       },
       {
-        title: 'Hazaribag',
+        title: 'Hazaribag', stateId: 2,
         status: true,
       },
       {
-        title: 'Jamshedpur',
+        title: 'Jamshedpur', stateId: 2,
         status: true,
       },
       {
-        title: 'Jharia',
+        title: 'Jharia', stateId: 2,
         status: true,
       },
       {
-        title: 'Rajmahal',
+        title: 'Rajmahal', stateId: 2,
         status: true,
       },
       {
-        title: 'Ranchi',
+        title: 'Ranchi', stateId: 2,
         status: true,
       },
       {
-        title: 'Saraikela',
+        title: 'Saraikela', stateId: 2,
         status: true,
       },
       {
-        title: 'Karnataka',
+        title: 'Karnataka', stateId: 2,
         status: true,
       },
       {
-        title: 'Badami',
+        title: 'Badami', stateId: 2,
         status: true,
       },
       {
-        title: 'Ballari',
+        title: 'Ballari', stateId: 2,
         status: true,
       },
       {
-        title: 'Bengaluru',
+        title: 'Bengaluru', stateId: 2,
         status: true,
       },
       {
-        title: 'Belagavi',
+        title: 'Belagavi', stateId: 2,
         status: true,
       },
       {
-        title: 'Bhadravati',
+        title: 'Bhadravati', stateId: 2,
         status: true,
       },
       {
-        title: 'Bidar',
+        title: 'Bidar', stateId: 2,
         status: true,
       },
       {
-        title: 'Chikkamagaluru',
+        title: 'Chikkamagaluru', stateId: 2,
         status: true,
       },
       {
-        title: 'Chitradurga',
+        title: 'Chitradurga', stateId: 2,
         status: true,
       },
       {
-        title: 'Davangere',
+        title: 'Davangere', stateId: 2,
         status: true,
       },
       {
-        title: 'Halebid',
+        title: 'Halebid', stateId: 2,
         status: true,
       },
       {
-        title: 'Hassan',
+        title: 'Hassan', stateId: 2,
         status: true,
       },
       {
-        title: 'Hubballi-Dharwad',
+        title: 'Hubballi-Dharwad', stateId: 2,
         status: true,
       },
       {
-        title: 'Kalaburagi',
+        title: 'Kalaburagi', stateId: 2,
         status: true,
       },
       {
-        title: 'Kolar',
+        title: 'Kolar', stateId: 2,
         status: true,
       },
       {
-        title: 'Madikeri',
+        title: 'Madikeri', stateId: 2,
         status: true,
       },
       {
-        title: 'Mandya',
+        title: 'Mandya', stateId: 2,
         status: true,
       },
       {
-        title: 'Mangaluru',
+        title: 'Mangaluru', stateId: 2,
         status: true,
       },
       {
-        title: 'Mysuru',
+        title: 'Mysuru', stateId: 2,
         status: true,
       },
       {
-        title: 'Raichur',
+        title: 'Raichur', stateId: 2,
         status: true,
       },
       {
-        title: 'Shivamogga',
+        title: 'Shivamogga', stateId: 2,
         status: true,
       },
       {
-        title: 'Shravanabelagola',
+        title: 'Shravanabelagola', stateId: 2,
         status: true,
       },
       {
-        title: 'Shrirangapattana',
+        title: 'Shrirangapattana', stateId: 2,
         status: true,
       },
       {
-        title: 'Tumakuru',
+        title: 'Tumakuru', stateId: 2,
         status: true,
       },
       {
-        title: 'Vijayapura',
+        title: 'Vijayapura', stateId: 2,
         status: true,
       },
       {
-        title: 'Kerala',
+        title: 'Kerala', stateId: 2,
         status: true,
       },
       {
-        title: 'Alappuzha',
+        title: 'Alappuzha', stateId: 2,
         status: true,
       },
       {
-        title: 'Vatakara',
+        title: 'Vatakara', stateId: 2,
         status: true,
       },
       {
-        title: 'Idukki',
-        status: true,
-      },
-      {
-        title: 'Kannur',
-        status: true,
-      },
-      {
-        title: 'Kochi',
-        status: true,
-      },
-      {
-        title: 'Kollam',
-        status: true,
-      },
-      {
-        title: 'Kottayam',
-        status: true,
-      },
-      {
-        title: 'Kozhikode',
-        status: true,
-      },
-      {
-        title: 'Mattancheri',
-        status: true,
-      },
-      {
-        title: 'Palakkad',
-        status: true,
-      },
-      {
-        title: 'Thalassery',
-        status: true,
-      },
-      {
-        title: 'Thiruvananthapuram',
-        status: true,
-      },
-      {
-        title: 'Thrissur',
-        status: true,
-      },
-      {
-        title: 'Ladakh (union territory)',
-        status: true,
-      },
-      {
-        title: 'Kargil',
-        status: true,
-      },
-      {
-        title: 'Leh',
-        status: true,
-      },
-      {
-        title: 'Madhya Pradesh',
-        status: true,
-      },
-      {
-        title: 'Balaghat',
-        status: true,
-      },
-      {
-        title: 'Barwani',
-        status: true,
-      },
-      {
-        title: 'Betul',
-        status: true,
-      },
-      {
-        title: 'Bharhut',
-        status: true,
-      },
-      {
-        title: 'Bhind',
-        status: true,
-      },
-      {
-        title: 'Bhojpur',
-        status: true,
-      },
-      {
-        title: 'Bhopal',
-        status: true,
-      },
-      {
-        title: 'Burhanpur',
-        status: true,
-      },
-      {
-        title: 'Chhatarpur',
-        status: true,
-      },
-      {
-        title: 'Chhindwara',
-        status: true,
-      },
-      {
-        title: 'Damoh',
-        status: true,
-      },
-      {
-        title: 'Datia',
-        status: true,
-      },
-      {
-        title: 'Dewas',
-        status: true,
-      },
-      {
-        title: 'Dhar',
-        status: true,
-      },
-      {
-        title: 'Dr. Ambedkar Nagar (Mhow)',
-        status: true,
-      },
-      {
-        title: 'Guna',
-        status: true,
-      },
-      {
-        title: 'Gwalior',
-        status: true,
-      },
-      {
-        title: 'Hoshangabad',
-        status: true,
-      },
-      {
-        title: 'Indore',
-        status: true,
-      },
-      {
-        title: 'Itarsi',
-        status: true,
-      },
-      {
-        title: 'Jabalpur',
-        status: true,
-      },
-      {
-        title: 'Jhabua',
-        status: true,
-      },
-      {
-        title: 'Khajuraho',
-        status: true,
-      },
-      {
-        title: 'Khandwa',
-        status: true,
-      },
-      {
-        title: 'Khargone',
-        status: true,
-      },
-      {
-        title: 'Maheshwar',
-        status: true,
-      },
-      {
-        title: 'Mandla',
-        status: true,
-      },
-      {
-        title: 'Mandsaur',
-        status: true,
-      },
-      {
-        title: 'Morena',
-        status: true,
-      },
-      {
-        title: 'Murwara',
-        status: true,
-      },
-      {
-        title: 'Narsimhapur',
-        status: true,
-      },
-      {
-        title: 'Narsinghgarh',
-        status: true,
-      },
-      {
-        title: 'Narwar',
-        status: true,
-      },
-      {
-        title: 'Neemuch',
-        status: true,
-      },
-      {
-        title: 'Nowgong',
-        status: true,
-      },
-      {
-        title: 'Orchha',
-        status: true,
-      },
-      {
-        title: 'Panna',
-        status: true,
-      },
-      {
-        title: 'Raisen',
-        status: true,
-      },
-      {
-        title: 'Rajgarh',
-        status: true,
-      },
-      {
-        title: 'Ratlam',
-        status: true,
-      },
-      {
-        title: 'Rewa',
-        status: true,
-      },
-      {
-        title: 'Sagar',
-        status: true,
-      },
-      {
-        title: 'Sarangpur',
-        status: true,
-      },
-      {
-        title: 'Satna',
-        status: true,
-      },
-      {
-        title: 'Sehore',
-        status: true,
-      },
-      {
-        title: 'Seoni',
-        status: true,
-      },
-      {
-        title: 'Shahdol',
-        status: true,
-      },
-      {
-        title: 'Shajapur',
-        status: true,
-      },
-      {
-        title: 'Sheopur',
-        status: true,
-      },
-      {
-        title: 'Shivpuri',
-        status: true,
-      },
-      {
-        title: 'Ujjain',
-        status: true,
-      },
-      {
-        title: 'Vidisha',
-        status: true,
-      },
-      {
-        title: 'Maharashtra',
-        status: true,
-      },
-      {
-        title: 'Ahmadnagar',
-        status: true,
-      },
-      {
-        title: 'Akola',
-        status: true,
-      },
-      {
-        title: 'Amravati',
-        status: true,
-      },
-      {
-        title: 'Aurangabad',
-        status: true,
-      },
-      {
-        title: 'Bhandara',
-        status: true,
-      },
-      {
-        title: 'Bhusawal',
-        status: true,
-      },
-      {
-        title: 'Bid',
-        status: true,
-      },
-      {
-        title: 'Buldhana',
-        status: true,
-      },
-      {
-        title: 'Chandrapur',
-        status: true,
-      },
-      {
-        title: 'Daulatabad',
-        status: true,
-      },
-      {
-        title: 'Dhule',
-        status: true,
-      },
-      {
-        title: 'Jalgaon',
-        status: true,
-      },
-      {
-        title: 'Kalyan',
-        status: true,
-      },
-      {
-        title: 'Karli',
-        status: true,
-      },
-      {
-        title: 'Kolhapur',
-        status: true,
-      },
-      {
-        title: 'Mahabaleshwar',
-        status: true,
-      },
-      {
-        title: 'Malegaon',
-        status: true,
-      },
-      {
-        title: 'Matheran',
-        status: true,
-      },
-      {
-        title: 'Mumbai',
-        status: true,
-      },
-      {
-        title: 'Nagpur',
-        status: true,
-      },
-      {
-        title: 'Nanded',
-        status: true,
-      },
-      {
-        title: 'Nashik',
-        status: true,
-      },
-      {
-        title: 'Osmanabad',
-        status: true,
-      },
-      {
-        title: 'Pandharpur',
-        status: true,
-      },
-      {
-        title: 'Parbhani',
-        status: true,
-      },
-      {
-        title: 'Pune',
-        status: true,
-      },
-      {
-        title: 'Ratnagiri',
-        status: true,
-      },
-      {
-        title: 'Sangli',
-        status: true,
-      },
-      {
-        title: 'Satara',
-        status: true,
-      },
-      {
-        title: 'Sevagram',
-        status: true,
-      },
-      {
-        title: 'Solapur',
-        status: true,
-      },
-      {
-        title: 'Thane',
-        status: true,
-      },
-      {
-        title: 'Ulhasnagar',
-        status: true,
-      },
-      {
-        title: 'Vasai-Virar',
-        status: true,
-      },
-      {
-        title: 'Wardha',
-        status: true,
-      },
-      {
-        title: 'Yavatmal',
-        status: true,
-      },
-      {
-        title: 'Manipur',
-        status: true,
-      },
-      {
-        title: 'Imphal',
-        status: true,
-      },
-      {
-        title: 'Meghalaya',
-        status: true,
-      },
-      {
-        title: 'Cherrapunji',
-        status: true,
-      },
-      {
-        title: 'Shillong',
-        status: true,
-      },
-      {
-        title: 'Mizoram',
-        status: true,
-      },
-      {
-        title: 'Aizawl',
-        status: true,
-      },
-      {
-        title: 'Lunglei',
-        status: true,
-      },
-      {
-        title: 'Nagaland',
-        status: true,
-      },
-      {
-        title: 'Kohima',
-        status: true,
-      },
-      {
-        title: 'Mon',
-        status: true,
-      },
-      {
-        title: 'Phek',
-        status: true,
-      },
-      {
-        title: 'Wokha',
-        status: true,
-      },
-      {
-        title: 'Zunheboto',
-        status: true,
-      },
-      {
-        title: 'Odisha',
-        status: true,
-      },
-      {
-        title: 'Balangir',
-        status: true,
-      },
-      {
-        title: 'Baleshwar',
-        status: true,
-      },
-      {
-        title: 'Baripada',
-        status: true,
-      },
-      {
-        title: 'Bhubaneshwar',
-        status: true,
-      },
-      {
-        title: 'Brahmapur',
-        status: true,
-      },
-      {
-        title: 'Cuttack',
-        status: true,
-      },
-      {
-        title: 'Dhenkanal',
-        status: true,
-      },
-      {
-        title: 'Kendujhar',
-        status: true,
-      },
-      {
-        title: 'Konark',
-        status: true,
-      },
-      {
-        title: 'Koraput',
-        status: true,
-      },
-      {
-        title: 'Paradip',
-        status: true,
-      },
-      {
-        title: 'Phulabani',
-        status: true,
-      },
-      {
-        title: 'Puri',
-        status: true,
-      },
-      {
-        title: 'Sambalpur',
-        status: true,
-      },
-      {
-        title: 'Udayagiri',
-        status: true,
-      },
-      {
-        title: 'Puducherry (union territory)',
-        status: true,
-      },
-      {
-        title: 'Karaikal',
-        status: true,
-      },
-      {
-        title: 'Mahe',
-        status: true,
-      },
-      {
-        title: 'Puducherry',
-        status: true,
-      },
-      {
-        title: 'Yanam',
-        status: true,
-      },
-      {
-        title: 'Punjab',
-        status: true,
-      },
-      {
-        title: 'Amritsar',
-        status: true,
-      },
-      {
-        title: 'Batala',
-        status: true,
-      },
-      {
-        title: 'Chandigarh',
-        status: true,
-      },
-      {
-        title: 'Faridkot',
-        status: true,
-      },
-      {
-        title: 'Firozpur',
-        status: true,
-      },
-      {
-        title: 'Gurdaspur',
-        status: true,
-      },
-      {
-        title: 'Hoshiarpur',
-        status: true,
-      },
-      {
-        title: 'Jalandhar',
-        status: true,
-      },
-      {
-        title: 'Kapurthala',
-        status: true,
-      },
-      {
-        title: 'Ludhiana',
-        status: true,
-      },
-      {
-        title: 'Nabha',
-        status: true,
-      },
-      {
-        title: 'Patiala',
-        status: true,
-      },
-      {
-        title: 'Rupnagar',
-        status: true,
-      },
-      {
-        title: 'Sangrur',
-        status: true,
-      },
-      {
-        title: 'Rajasthan',
-        status: true,
-      },
-      {
-        title: 'Abu',
-        status: true,
-      },
-      {
-        title: 'Ajmer',
-        status: true,
-      },
-      {
-        title: 'Alwar',
-        status: true,
-      },
-      {
-        title: 'Amer',
-        status: true,
-      },
-      {
-        title: 'Barmer',
-        status: true,
-      },
-      {
-        title: 'Beawar',
-        status: true,
-      },
-      {
-        title: 'Bharatpur',
-        status: true,
-      },
-      {
-        title: 'Bhilwara',
-        status: true,
-      },
-      {
-        title: 'Bikaner',
-        status: true,
-      },
-      {
-        title: 'Bundi',
-        status: true,
-      },
-      {
-        title: 'Chittaurgarh',
-        status: true,
-      },
-      {
-        title: 'Churu',
-        status: true,
-      },
-      {
-        title: 'Dhaulpur',
-        status: true,
-      },
-      {
-        title: 'Dungarpur',
-        status: true,
-      },
-      {
-        title: 'Ganganagar',
-        status: true,
-      },
-      {
-        title: 'Hanumangarh',
-        status: true,
-      },
-      {
-        title: 'Jaipur',
-        status: true,
-      },
-      {
-        title: 'Jaisalmer',
-        status: true,
-      },
-      {
-        title: 'Jalor',
-        status: true,
-      },
-      {
-        title: 'Jhalawar',
-        status: true,
-      },
-      {
-        title: 'Jhunjhunu',
-        status: true,
-      },
-      {
-        title: 'Jodhpur',
-        status: true,
-      },
-      {
-        title: 'Kishangarh',
-        status: true,
-      },
-      {
-        title: 'Kota',
-        status: true,
-      },
-      {
-        title: 'Merta',
-        status: true,
-      },
-      {
-        title: 'Nagaur',
-        status: true,
-      },
-      {
-        title: 'Nathdwara',
-        status: true,
-      },
-      {
-        title: 'Pali',
-        status: true,
-      },
-      {
-        title: 'Phalodi',
-        status: true,
-      },
-      {
-        title: 'Pushkar',
-        status: true,
-      },
-      {
-        title: 'Sawai Madhopur',
-        status: true,
-      },
-      {
-        title: 'Shahpura',
-        status: true,
-      },
-      {
-        title: 'Sikar',
-        status: true,
-      },
-      {
-        title: 'Sirohi',
-        status: true,
-      },
-      {
-        title: 'Tonk',
-        status: true,
-      },
-      {
-        title: 'Udaipur',
-        status: true,
-      },
-      {
-        title: 'Sikkim',
-        status: true,
-      },
-      {
-        title: 'Gangtok',
-        status: true,
-      },
-      {
-        title: 'Gyalshing',
-        status: true,
-      },
-      {
-        title: 'Lachung',
-        status: true,
-      },
-      {
-        title: 'Mangan',
-        status: true,
-      },
-      {
-        title: 'Tamil Nadu',
-        status: true,
-      },
-      {
-        title: 'Arcot',
-        status: true,
-      },
-      {
-        title: 'Chengalpattu',
-        status: true,
-      },
-      {
-        title: 'Chennai',
-        status: true,
-      },
-      {
-        title: 'Chidambaram',
-        status: true,
-      },
-      {
-        title: 'Coimbatore',
-        status: true,
-      },
-      {
-        title: 'Cuddalore',
-        status: true,
-      },
-      {
-        title: 'Dharmapuri',
-        status: true,
-      },
-      {
-        title: 'Dindigul',
-        status: true,
-      },
-      {
-        title: 'Erode',
-        status: true,
-      },
-      {
-        title: 'Kanchipuram',
-        status: true,
-      },
-      {
-        title: 'Kanniyakumari',
-        status: true,
-      },
-      {
-        title: 'Kodaikanal',
-        status: true,
-      },
-      {
-        title: 'Kumbakonam',
-        status: true,
-      },
-      {
-        title: 'Madurai',
-        status: true,
-      },
-      {
-        title: 'Mamallapuram',
-        status: true,
-      },
-      {
-        title: 'Nagappattinam',
-        status: true,
-      },
-      {
-        title: 'Nagercoil',
-        status: true,
-      },
-      {
-        title: 'Palayamkottai',
-        status: true,
-      },
-      {
-        title: 'Pudukkottai',
-        status: true,
-      },
-      {
-        title: 'Rajapalayam',
-        status: true,
-      },
-      {
-        title: 'Ramanathapuram',
-        status: true,
-      },
-      {
-        title: 'Salem',
-        status: true,
-      },
-      {
-        title: 'Thanjavur',
-        status: true,
-      },
-      {
-        title: 'Tiruchchirappalli',
-        status: true,
-      },
-      {
-        title: 'Tirunelveli',
-        status: true,
-      },
-      {
-        title: 'Tiruppur',
-        status: true,
-      },
-      {
-        title: 'Thoothukudi',
-        status: true,
-      },
-      {
-        title: 'Udhagamandalam',
-        status: true,
-      },
-      {
-        title: 'Vellore',
-        status: true,
-      },
-      {
-        title: 'Telangana',
-        status: true,
-      },
-      {
-        title: 'Hyderabad',
-        status: true,
-      },
-      {
-        title: 'Karimnagar',
-        status: true,
-      },
-      {
-        title: 'Khammam',
-        status: true,
-      },
-      {
-        title: 'Mahbubnagar',
-        status: true,
-      },
-      {
-        title: 'Nizamabad',
-        status: true,
-      },
-      {
-        title: 'Sangareddi',
-        status: true,
-      },
-      {
-        title: 'Warangal',
-        status: true,
-      },
-      {
-        title: 'Tripura',
-        status: true,
-      },
-      {
-        title: 'Agartala',
-        status: true,
-      },
-      {
-        title: 'Uttar Pradesh',
-        status: true,
-      },
-      {
-        title: 'Agra',
-        status: true,
-      },
-      {
-        title: 'Aligarh',
-        status: true,
-      },
-      {
-        title: 'Amroha',
-        status: true,
-      },
-      {
-        title: 'Ayodhya',
-        status: true,
-      },
-      {
-        title: 'Azamgarh',
-        status: true,
-      },
-      {
-        title: 'Bahraich',
-        status: true,
-      },
-      {
-        title: 'Ballia',
-        status: true,
-      },
-      {
-        title: 'Banda',
-        status: true,
-      },
-      {
-        title: 'Bara Banki',
-        status: true,
-      },
-      {
-        title: 'Bareilly',
-        status: true,
-      },
-      {
-        title: 'Basti',
-        status: true,
-      },
-      {
-        title: 'Bijnor',
-        status: true,
-      },
-      {
-        title: 'Bithur',
-        status: true,
-      },
-      {
-        title: 'Budaun',
-        status: true,
-      },
-      {
-        title: 'Bulandshahr',
-        status: true,
-      },
-      {
-        title: 'Deoria',
-        status: true,
-      },
-      {
-        title: 'Etah',
-        status: true,
-      },
-      {
-        title: 'Etawah',
-        status: true,
-      },
-      {
-        title: 'Faizabad',
-        status: true,
-      },
-      {
-        title: 'Farrukhabad-cum-Fatehgarh',
-        status: true,
-      },
-      {
-        title: 'Fatehpur',
-        status: true,
-      },
-      {
-        title: 'Fatehpur Sikri',
-        status: true,
-      },
-      {
-        title: 'Ghaziabad',
-        status: true,
-      },
-      {
-        title: 'Ghazipur',
-        status: true,
-      },
-      {
-        title: 'Gonda',
-        status: true,
-      },
-      {
-        title: 'Gorakhpur',
-        status: true,
-      },
-      {
-        title: 'Hamirpur',
-        status: true,
-      },
-      {
-        title: 'Hardoi',
-        status: true,
-      },
-      {
-        title: 'Hathras',
-        status: true,
-      },
-      {
-        title: 'Jalaun',
-        status: true,
-      },
-      {
-        title: 'Jaunpur',
-        status: true,
-      },
-      {
-        title: 'Jhansi',
-        status: true,
-      },
-      {
-        title: 'Kannauj',
-        status: true,
-      },
-      {
-        title: 'Kanpur',
-        status: true,
-      },
-      {
-        title: 'Lakhimpur',
-        status: true,
-      },
-      {
-        title: 'Lalitpur',
-        status: true,
-      },
-      {
-        title: 'Lucknow',
-        status: true,
-      },
-      {
-        title: 'Mainpuri',
-        status: true,
-      },
-      {
-        title: 'Mathura',
-        status: true,
-      },
-      {
-        title: 'Meerut',
-        status: true,
-      },
-      {
-        title: 'Mirzapur-Vindhyachal',
-        status: true,
-      },
-      {
-        title: 'Moradabad',
-        status: true,
-      },
-      {
-        title: 'Muzaffarnagar',
-        status: true,
-      },
-      {
-        title: 'Partapgarh',
-        status: true,
-      },
-      {
-        title: 'Pilibhit',
-        status: true,
-      },
-      {
-        title: 'Prayagraj',
-        status: true,
-      },
-      {
-        title: 'Rae Bareli',
-        status: true,
-      },
-      {
-        title: 'Rampur',
-        status: true,
-      },
-      {
-        title: 'Saharanpur',
-        status: true,
-      },
-      {
-        title: 'Sambhal',
-        status: true,
-      },
-      {
-        title: 'Shahjahanpur',
-        status: true,
-      },
-      {
-        title: 'Sitapur',
-        status: true,
-      },
-      {
-        title: 'Sultanpur',
-        status: true,
-      },
-      {
-        title: 'Tehri',
-        status: true,
-      },
-      {
-        title: 'Varanasi',
-        status: true,
-      },
-      {
-        title: 'Uttarakhand',
-        status: true,
-      },
-      {
-        title: 'Almora',
-        status: true,
-      },
-      {
-        title: 'Dehra Dun',
-        status: true,
-      },
-      {
-        title: 'Haridwar',
-        status: true,
-      },
-      {
-        title: 'Mussoorie',
-        status: true,
-      },
-      {
-        title: 'Nainital',
-        status: true,
-      },
-      {
-        title: 'Pithoragarh',
-        status: true,
-      },
-      {
-        title: 'West Bengal',
-        status: true,
-      },
-      {
-        title: 'Alipore',
-        status: true,
-      },
-      {
-        title: 'Alipur Duar',
-        status: true,
-      },
-      {
-        title: 'Asansol',
-        status: true,
-      },
-      {
-        title: 'Baharampur',
-        status: true,
-      },
-      {
-        title: 'Bally',
-        status: true,
-      },
-      {
-        title: 'Balurghat',
-        status: true,
-      },
-      {
-        title: 'Bankura',
-        status: true,
-      },
-      {
-        title: 'Baranagar',
-        status: true,
-      },
-      {
-        title: 'Barasat',
-        status: true,
-      },
-      {
-        title: 'Barrackpore',
-        status: true,
-      },
-      {
-        title: 'Basirhat',
-        status: true,
-      },
-      {
-        title: 'Bhatpara',
-        status: true,
-      },
-      {
-        title: 'Bishnupur',
-        status: true,
-      },
-      {
-        title: 'Budge Budge',
-        status: true,
-      },
-      {
-        title: 'Burdwan',
-        status: true,
-      },
-      {
-        title: 'Chandernagore',
-        status: true,
-      },
-      {
-        title: 'Darjeeling',
-        status: true,
-      },
-      {
-        title: 'Diamond Harbour',
-        status: true,
-      },
-      {
-        title: 'Dum Dum',
-        status: true,
-      },
-      {
-        title: 'Durgapur',
-        status: true,
-      },
-      {
-        title: 'Halisahar',
-        status: true,
-      },
-      {
-        title: 'Haora',
-        status: true,
-      },
-      {
-        title: 'Hugli',
-        status: true,
-      },
-      {
-        title: 'Ingraj Bazar',
-        status: true,
-      },
-      {
-        title: 'Jalpaiguri',
-        status: true,
-      },
-      {
-        title: 'Kalimpong',
-        status: true,
-      },
-      {
-        title: 'Kamarhati',
-        status: true,
-      },
-      {
-        title: 'Kanchrapara',
-        status: true,
-      },
-      {
-        title: 'Kharagpur',
-        status: true,
-      },
-      {
-        title: 'Cooch Behar',
-        status: true,
-      },
-      {
-        title: 'Kolkata',
-        status: true,
-      },
-      {
-        title: 'Krishnanagar',
-        status: true,
-      },
-      {
-        title: 'Malda',
-        status: true,
-      },
-      {
-        title: 'Midnapore',
-        status: true,
-      },
-      {
-        title: 'Murshidabad',
-        status: true,
-      },
-      {
-        title: 'Nabadwip',
-        status: true,
-      },
-      {
-        title: 'Palashi',
-        status: true,
-      },
-      {
-        title: 'Panihati',
-        status: true,
-      },
-      {
-        title: 'Purulia',
-        status: true,
-      },
-      {
-        title: 'Raiganj',
-        status: true,
-      },
-      {
-        title: 'Santipur',
-        status: true,
-      },
-      {
-        title: 'Shantiniketan',
-        status: true,
-      },
-      {
-        title: 'Shrirampur',
-        status: true,
-      },
-      {
-        title: 'Siliguri',
-        status: true,
-      },
-      {
-        title: 'Siuri',
-        status: true,
-      },
-      {
-        title: 'Tamluk',
-        status: true,
-      },
-      {
-        title: 'Titagarh',
+        title: 'Idukki', stateId: 2,
         status: true,
       }
 
