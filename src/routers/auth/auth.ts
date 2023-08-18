@@ -1,6 +1,6 @@
-import { Router } from 'express';
+import { Response, Router } from 'express';
 import passport from '../../config/passport';
-import { sign, Secret, JwtPayload, SignOptions } from 'jsonwebtoken';
+import { sign, Secret, SignOptions } from 'jsonwebtoken';
 import 'dotenv/config';
 import { jwtSign } from '../../utils/jwtSign';
 import { registerUser } from '../../controllers/user/userController';
@@ -27,21 +27,15 @@ authRouter.get(
   })
 );
 authRouter.get('/google/callback',
-  passport.authenticate('google', {
-    failureRedirect: 'http://localhost:3000/registration', session: true
-  }),
-  function (req, res) {
-    res.redirect('http://localhost:3000/homePage');
-  }
-  // jwtSign
+  passport.authenticate('google',
+    {
+      failureRedirect: 'http://localhost:3000/registration', session: true
+    }),
+  jwtSign
 )
-authRouter.get('/logout', (req: Request, res, next) => {
-  req.logout(function (err) {
-    if (err) {
-      return next(err)
-    }
-  })
-  res.send(req.user);
+authRouter.get('/logout', (req: Request, res:Response, next) => {
+  res.cookie('token', null);
+  res.redirect('http://localhost:3000/')
 });
 
 authRouter.get('/current_user', passport.authenticate('jwt'), (req, res) => {

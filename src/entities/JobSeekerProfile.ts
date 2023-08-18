@@ -1,12 +1,13 @@
-import { Entity, PrimaryGeneratedColumn, Column, OneToOne, JoinColumn, OneToMany } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column, OneToOne, JoinColumn, OneToMany, BaseEntity } from 'typeorm';
 import { NoticePeriod } from './NoticePeriod';
 import { Location } from './Location';
 import { Education } from './Education';
 import { Industry } from './Industry';
 import { KeySkills } from './KeySkills';
+import { User } from './User';
 
 @Entity()
-export class JobSeekerProfile  {
+export class JobSeekerProfile extends BaseEntity {
   @PrimaryGeneratedColumn()
   id!: number
 
@@ -46,6 +47,10 @@ export class JobSeekerProfile  {
   noticePeriod!: NoticePeriod
 
   @OneToMany(() => Education,(education)=>education.jobSeeker)
-  educations!:Education[]
+  educations!: Education[]
+  
+  @OneToOne(() => User)
+  @JoinColumn()
+  user!:User
 
 }
