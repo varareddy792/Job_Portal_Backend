@@ -1,4 +1,4 @@
-import { Entity, PrimaryGeneratedColumn, Column, OneToOne, JoinColumn, OneToMany } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column, OneToOne, JoinColumn, OneToMany, BaseEntity } from 'typeorm';
 import { NoticePeriod } from './NoticePeriod';
 import { Location } from './Location';
 import { Education } from './Education';
@@ -6,7 +6,7 @@ import { Industry } from './Industry';
 import { KeySkills } from './KeySkills';
 
 @Entity()
-export class JobSeekerProfile  {
+export class JobSeekerProfile extends BaseEntity {
   @PrimaryGeneratedColumn()
   id!: number
 

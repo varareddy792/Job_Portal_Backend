@@ -24,7 +24,9 @@ export const jwtSign = (req: Request, res: Response, next: NextFunction) => {
       next();
     }
     console.log('token', token)
-    res.json({ token });
+    res.cookie('token', token);
+    res.redirect('http://localhost:3000/homePage');
+    // res.json({ token });
     next();
   });
 };
