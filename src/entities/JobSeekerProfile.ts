@@ -4,6 +4,7 @@ import { Location } from './Location';
 import { Education } from './Education';
 import { Industry } from './Industry';
 import { KeySkills } from './KeySkills';
+import { User } from './User';
 
 @Entity()
 export class JobSeekerProfile extends BaseEntity {
@@ -46,6 +47,10 @@ export class JobSeekerProfile extends BaseEntity {
   noticePeriod!: NoticePeriod
 
   @OneToMany(() => Education,(education)=>education.jobSeeker)
-  educations!:Education[]
+  educations!: Education[]
+  
+  @OneToOne(() => User)
+  @JoinColumn()
+  user!:User
 
 }

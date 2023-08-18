@@ -1,4 +1,5 @@
-import { Entity, PrimaryGeneratedColumn, Column, BaseEntity } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column, BaseEntity, OneToOne, JoinColumn } from 'typeorm';
+import { JobSeekerProfile } from './JobSeekerProfile';
 
 @Entity()
 export class User extends BaseEntity {
@@ -25,6 +26,10 @@ export class User extends BaseEntity {
 
   @Column({ default: null })
   userType!: string
+
+  @OneToOne(() => JobSeekerProfile)
+  @JoinColumn()
+  jobSeekerProfile!: JobSeekerProfile
   // @Column({default:false})
   // isEmailVerified!: boolean
 
