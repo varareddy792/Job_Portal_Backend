@@ -27,11 +27,16 @@ authRouter.get(
   })
 );
 authRouter.get('/google/callback',
-  passport.authenticate('google'),
-  jwtSign
+  passport.authenticate('google', {
+    failureRedirect: 'http://localhost:3000/registration', session: true
+  }),
+  function (req, res) {
+    res.redirect('http://localhost:3000/homePage');
+  }
+  // jwtSign
 )
-authRouter.get('/logout', (req:Request, res, next) => {
-  req.logOut(function (err) {
+authRouter.get('/logout', (req: Request, res, next) => {
+  req.logout(function (err) {
     if (err) {
       return next(err)
     }
