@@ -11,7 +11,7 @@ export class JobSeekerProfile extends BaseEntity {
   @PrimaryGeneratedColumn()
   id!: number
 
-  @Column({ default: false })
+  @Column({ default: null })
   workStatus!: boolean
 
   @Column({ default: null })
