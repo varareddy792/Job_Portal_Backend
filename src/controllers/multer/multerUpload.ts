@@ -14,7 +14,6 @@ export const multerUpload: RequestHandler = async (req: Request, res: Response) 
     await upload(req, res);
     const { id } = req.body;
     
-
     return res.status(200).json({
       message: 'success'
     })

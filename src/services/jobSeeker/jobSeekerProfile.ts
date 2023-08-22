@@ -8,13 +8,31 @@ type Params = {
 
 export const saveJobSeekerProfile = async (jobSeekerParams: Params) => {
   try {
-    console.log('jobSeekerParams', jobSeekerParams)
     const jobSeekerProfileRepository = AppDataSource.getRepository(JobSeekerProfile);
-    const jobSeekerProfile =  jobSeekerProfileRepository.save(jobSeekerParams);
-    console.log('dddd', jobSeekerParams)
-    return jobSeekerParams;
+    const jobSeekerProfile = jobSeekerProfileRepository.save(jobSeekerParams);
+
+    return jobSeekerProfile;
   } catch (error) {
     console.log('error', error);
     throw error;
   }
+};
+
+export const updateJobSeekerProfile = async (id: number, jobSeekerParams: JobSeekerProfile) => {
+  try {
+    const jobSeekerProfileRepository = AppDataSource.getRepository(JobSeekerProfile);
+    const jobSeekerProfile = await jobSeekerProfileRepository.update(id, {
+      ...(jobSeekerParams.completedSections && { completedSections: jobSeekerParams.completedSections }),
+      ...(jobSeekerParams.currentLocation && { currentLocation: jobSeekerParams.currentLocation }),
+      ...(jobSeekerParams.noticePeriod && { noticePeriod: jobSeekerParams.noticePeriod }),
+      ...(jobSeekerParams.profilePicture && { profilePicture: jobSeekerParams.profilePicture }),
+      ...(jobSeekerParams.resume && { resume: jobSeekerParams.resume })
+    });
+    return jobSeekerProfile;
+
+  } catch (error) {
+    console.log('error', error);
+    throw error;
+  }
+
 }
