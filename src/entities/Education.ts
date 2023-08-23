@@ -35,9 +35,6 @@ export class Education extends BaseEntity {
   passingYear!: string
 
   @Column()
-  resumeHeadline!: string
-
-  @Column()
   preferredWorkLocations!: string
 
   @Column()

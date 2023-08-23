@@ -49,6 +49,8 @@ import GenderSeeder from '../entities/seed/Gender.seeder';
 import { Location } from '../entities/Location';
 import LocationSeeder from '../entities/seed/Location.seeder';
 import CitySeeder from '../entities/seed/City.seeder';
+import { Country } from '../entities/Country';
+import CountrySeeder from '../entities/seed/Country.seeder';
 
 if (process.env.DB_NAME === undefined) {
   throw new Error('Dbname cannot be undefined')
@@ -86,8 +88,8 @@ const options: DataSourceOptions & SeederOptions = {
   database: process.env.DB_NAME,
   synchronize: true,
   logging: true,
-  entities: [User, JobSeekerProfile, Employment, TotalExpYear, TotalExpMonth, Company, JobTitle, Currency, State, City, NoticePeriod, AvailabilityToJoin, KeySkills, Industry, Department, RoleCategory, JobRole, Education, HighestQualification, Course, Specialization, CourseType, UniversityInstitute, Gender, Location],
-  seeds: [TotalExpYearSeeder, TotalExpMonthSeeder, CompanySeeder, JobTitleSeeder, CurrencySeeder, StateSeeder, NoticePeriodSeeder, AvailabilityToJoinSeeder, KeySkillsSeeder, IndustrySeeder, DepartmentSeeder, RoleCategorySeeder, JobRoleSeeder, HighestQualificationSeeder, CourseSeeder, SpecializationSeeder, CourseTypeSeeder, UniversityInstituteSeeder, GenderSeeder, LocationSeeder],
+  entities: [User, JobSeekerProfile, Employment, TotalExpYear, TotalExpMonth, Company, JobTitle, Currency, State, City, NoticePeriod, AvailabilityToJoin, KeySkills, Industry, Department, RoleCategory, JobRole, Education, HighestQualification, Course, Specialization, CourseType, UniversityInstitute, Gender, Location, Country, City],
+  seeds: [TotalExpYearSeeder, TotalExpMonthSeeder, CompanySeeder, JobTitleSeeder, CurrencySeeder, StateSeeder, NoticePeriodSeeder, AvailabilityToJoinSeeder, KeySkillsSeeder, IndustrySeeder, DepartmentSeeder, RoleCategorySeeder, JobRoleSeeder, HighestQualificationSeeder, CourseSeeder, SpecializationSeeder, CourseTypeSeeder, UniversityInstituteSeeder, GenderSeeder, LocationSeeder, CountrySeeder, CitySeeder],
   subscribers: [],
   migrations: [],
 }

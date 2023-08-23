@@ -1,69 +1,76 @@
-import { Entity, PrimaryGeneratedColumn, Column, BaseEntity, ManyToOne } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column, BaseEntity, ManyToOne, OneToOne, JoinColumn } from 'typeorm';
 import { JobSeekerProfile } from './JobSeekerProfile';
+import { User } from './User';
+import { Company } from './Company';
+import { City } from './City';
+import { State } from './State';
 
 @Entity()
 export class Employment extends BaseEntity {
   @PrimaryGeneratedColumn()
   id!: number
 
-  @Column()
-  jobSeekerId!: string;
-
-  @ManyToOne(type => JobSeekerProfile, jobSeekerProfile => jobSeekerProfile.id) jobSeekerProfile!: JobSeekerProfile;
-
-  @Column()
+  @Column({ default: false })
   currentlyEmployed!: boolean
 
-  @Column()
+  @Column({ default: null })
   totalExperience!: string
 
-  @Column()
-  company!: string
+  @OneToOne(() => Company)
+  @JoinColumn()
+  company!: Company
 
-  @Column()
+  @Column({ default: null })
   jobTitle!: string
 
-  @Column()
+  @Column({ default: null })
   outsideIndia!: boolean
 
-  @Column()
-  currentCity!: string
+  @OneToOne(() => City)
+  @JoinColumn()
+  currentCity!: City
 
-  @Column()
-  currentState!: string
+  @OneToOne(() => State)
+  @JoinColumn()
+  currentState!: State
 
-  @Column()
-  currentCountry!: string
+  @OneToOne(() => State)
+  @JoinColumn()
+  currentCountry!: State
 
-  @Column()
+  @Column({ default: null })
   workingStartDate!: string
 
-  @Column()
+  @Column({ default: null })
   workingEndDate!: string
 
-  @Column()
+  @Column({ default: null })
   annualSalaryCurrency!: string
 
-  @Column()
+  @Column({ default: null })
   annualSalaryAmount!: string
 
-  @Column()
+  @Column({ default: null })
   noticePeriod!: string
 
-  @Column()
+  @Column({ default: null })
   keySkills!: string
 
-  @Column()
+  @Column({ default: null })
   industry!: string
 
-  @Column()
+  @Column({ default: null })
   department!: string
 
-  @Column()
+  @Column({ default: null })
   roleCategory!: string
 
-  @Column()
+  @Column({ default: null })
   jobRole!: string
+
+  @OneToOne(() => User)
+  @JoinColumn()
+  user!: User
 }
 
 

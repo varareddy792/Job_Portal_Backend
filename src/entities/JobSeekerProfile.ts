@@ -26,8 +26,8 @@ export class JobSeekerProfile extends BaseEntity {
   @Column({ default: null })
   completedSections!: number
 
-  // @Column({ default: null })
-  // currentLocation!: string
+  @Column({ default: null })
+  resumeHeadline!: string
 
   @OneToOne(() => Location)
   @JoinColumn()
@@ -37,20 +37,20 @@ export class JobSeekerProfile extends BaseEntity {
   preferredLocations!: Location[]
 
   @OneToMany(() => KeySkills, (keySkills) => keySkills.jobSeekerProfile)
-    keySkills!:KeySkills[]
-  
+  keySkills!: KeySkills[]
+
   @OneToMany(() => Industry, (industry) => industry.jobSeekerProfile)
-    industries!:Industry[]
+  industries!: Industry[]
 
   @OneToOne(() => NoticePeriod)
   @JoinColumn()
   noticePeriod!: NoticePeriod
 
-  @OneToMany(() => Education,(education)=>education.jobSeeker)
+  @OneToMany(() => Education, (education) => education.jobSeeker)
   educations!: Education[]
-  
+
   @OneToOne(() => User)
   @JoinColumn()
-  user!:User
+  user!: User
 
 }
