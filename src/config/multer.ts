@@ -10,7 +10,7 @@ export const storage = multer.diskStorage({
   filename: function (req, file, cb) {
     const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9);
     // console.log('suffix', uniqueSuffix);
-    cb(null, file.filename + '-' + uniqueSuffix);
+    cb(null, file.fieldname + '-' + uniqueSuffix + path.extname(file.originalname)) // Appending extension;
   }
 });
 

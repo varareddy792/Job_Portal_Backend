@@ -4,11 +4,14 @@ import multer from 'multer';
 import bcrypt from 'bcrypt';
 import { promisify } from 'util';
 import { saveUser } from '../../services/user/userService';
+import { saveJobSeekerProfile } from '../../services/jobSeeker/jobSeekerProfile';
+import { generateToken } from '../../utils/generateToken';
 
 export const registerUser: RequestHandler = async (req: Request, res: Response, next: NextFunction) => {
   try {
    
-    const userParams = req.body;
+    const { workStatus, ...userParams} = req.body;
+    
     const saltRounds = 10;
     const hashedPassword = await bcrypt.hash(userParams.password, saltRounds).then(function (hash) { return hash });
     userParams.hashedPassword = hashedPassword;
@@ -20,19 +23,34 @@ export const registerUser: RequestHandler = async (req: Request, res: Response, 
     }).single('file'));
 
     await upload(req, res);
-    console.log('multer data ', req.file);
+    
     if (!req.file) {
       userParams.resumePath = 'no path';
     } else {
       userParams.resumePath = req.file.path;
     };
 
-    const result = await saveUser(userParams);
-    
+    const user = await saveUser(userParams);
+   
+    switch (user.userType) {
+      case 'jobSeeker': {
+        const jobSeekerParams = {
+          userId:user.id,
+          workStatus
+        }
+       const  jobSeeker =  await saveJobSeekerProfile(jobSeekerParams);
+        
+      }
+    }
+    const token = await generateToken(user);
+    res.cookie('token', token);
     return res.status(201).json({
       message: 'User successfully saved',
-      data:result
+      data: user,
     });
+  
+    
+   
 
   } catch (error) {
     console.log('error', error);
