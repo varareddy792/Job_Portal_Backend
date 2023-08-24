@@ -1,50 +1,58 @@
-import { Entity, PrimaryGeneratedColumn, Column, BaseEntity, ManyToOne } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column, BaseEntity, ManyToOne, JoinColumn } from 'typeorm';
 import { JobSeekerProfile } from './JobSeekerProfile';
-import { User } from './User';
 
 @Entity()
 export class Education extends BaseEntity {
   @PrimaryGeneratedColumn()
   id!: number
 
-  @Column()
-  jobSeekerId!: string;
+  // @Column()
+  // jobSeekerId!: string;
 
-  @ManyToOne(() => JobSeekerProfile, (jobSeekerProfile) => jobSeekerProfile.educations)
-  jobSeeker!: JobSeekerProfile
+  @ManyToOne(() => JobSeekerProfile, (jobSeekerProfile) => jobSeekerProfile.educations, { onDelete: 'CASCADE' })
+  jobSeekerProfile!: JobSeekerProfile
+
+  // @ManyToOne(() => JobSeekerProfile, (jobSeekerProfile) => jobSeekerProfile.educations, { nullable: false })
+  // @JoinColumn({ name: 'jobSeekerProfile' })
+  // jobSeekerProfile!: JobSeekerProfile
 
   @Column()
-  highestQualification!: string
+  education!: string
 
-  @Column()
-  course!: string
+  // @Column()
+  // course!: string
 
   @Column()
   specialization!: string
 
   @Column()
-  universityInstitute!: string
+  institute!: string
 
   @Column()
   courseType!: string
 
-  @Column()
-  startingYear!: string
+  //@Column()
+  //startingYear!: string
 
   @Column()
   passingYear!: string
 
   @Column()
-  preferredWorkLocations!: string
+  percentage!: string
+  //@Column()
+  //resumeHeadline!: string
 
-  @Column()
-  preferredSalaryCurrency!: string
+  //@Column()
+  //preferredWorkLocations!: string
 
-  @Column()
-  preferredSalaryAmount!: string
+  //@Column()
+  //preferredSalaryCurrency!: string
 
-  @Column()
-  gender!: string
+  //@Column()
+  //preferredSalaryAmount!: string
+
+  //@Column()
+  //gender!: string
 }
 
 

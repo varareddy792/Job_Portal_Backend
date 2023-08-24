@@ -13,3 +13,16 @@ export const saveUser = async (userParams:User) => {
     throw error;
   }
 }
+
+export const fetchUser = async (email: string) => {
+  try {
+    const userRepository = AppDataSource.getRepository(User);
+    const user = await userRepository.findOneBy({
+      email
+    });
+    return user;
+  } catch (error) {
+    console.log('error', error);
+    throw error;
+  }
+}

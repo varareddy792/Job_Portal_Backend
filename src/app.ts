@@ -8,6 +8,7 @@ import passport from 'passport';
 import session from 'express-session';
 import { runSeeders } from 'typeorm-extension';
 import logger from 'morgan';
+import  'dotenv/config';
 
 (async () => {
   AppDataSource.initialize().then(() => {
@@ -32,10 +33,9 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: true, limit: process.env.FILE_LIMIT }));
 app.use(bodyParser.json());
-app.use(logger('dev'))
+app.use(logger('dev'));
 app.use(router);
 
 /// catch 404 and forward to error handler

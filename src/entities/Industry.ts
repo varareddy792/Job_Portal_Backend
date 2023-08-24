@@ -12,6 +12,6 @@ export class Industry extends BaseEntity {
   @Column()
   status!: boolean
 
-  @ManyToOne(() => JobSeekerProfile, (jobSeekerProfile) => jobSeekerProfile.industries)
+  @ManyToOne(() => JobSeekerProfile, (jobSeekerProfile) => jobSeekerProfile.industries,{onDelete:'CASCADE'})
   jobSeekerProfile!: JobSeekerProfile
 }
