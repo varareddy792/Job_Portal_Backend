@@ -12,7 +12,7 @@ export class KeySkills extends BaseEntity {
   @Column()
   status!: boolean
 
-  @ManyToOne(() => JobSeekerProfile, (jobSeekerProfile) => jobSeekerProfile.keySkills)
+  @ManyToOne(() => JobSeekerProfile, (jobSeekerProfile) => jobSeekerProfile.keySkills,{onDelete:'CASCADE'})
   jobSeekerProfile!:JobSeekerProfile
 
 }

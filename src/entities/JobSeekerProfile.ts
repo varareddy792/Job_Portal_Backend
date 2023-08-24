@@ -1,4 +1,4 @@
-import { Entity, PrimaryGeneratedColumn, Column, OneToOne, JoinColumn, OneToMany, BaseEntity } from 'typeorm';
+import { Entity, Column, OneToOne, JoinColumn, OneToMany, BaseEntity,PrimaryColumn } from 'typeorm';
 import { NoticePeriod } from './NoticePeriod';
 import { Location } from './Location';
 import { Education } from './Education';
@@ -8,7 +8,7 @@ import { User } from './User';
 
 @Entity()
 export class JobSeekerProfile extends BaseEntity {
-  @PrimaryGeneratedColumn()
+  @PrimaryColumn()
   id!: number
 
   @Column({ default: null })
@@ -33,20 +33,20 @@ export class JobSeekerProfile extends BaseEntity {
   @JoinColumn()
   currentLocation!: Location
 
-  @OneToMany(() => Location, (location) => location.jobSeekerProfile)
+  @OneToMany(() => Location, (location) => location.jobSeekerProfile,{createForeignKeyConstraints:true,cascade:true})
   preferredLocations!: Location[]
 
-  @OneToMany(() => KeySkills, (keySkills) => keySkills.jobSeekerProfile)
+  @OneToMany(() => KeySkills, (keySkills) => keySkills.jobSeekerProfile,{createForeignKeyConstraints:true,cascade:true})
     keySkills!:KeySkills[]
   
-  @OneToMany(() => Industry, (industry) => industry.jobSeekerProfile)
+  @OneToMany(() => Industry, (industry) => industry.jobSeekerProfile, { createForeignKeyConstraints: true, cascade: true })
     industries!:Industry[]
 
   @OneToOne(() => NoticePeriod)
   @JoinColumn()
   noticePeriod!: NoticePeriod
 
-  @OneToMany(() => Education,(education)=>education.jobSeeker)
+  @OneToMany(() => Education, (education) => education.jobSeeker, { createForeignKeyConstraints: true, cascade: true })
   educations!: Education[]
   
   @OneToOne(() => User)

@@ -9,7 +9,8 @@ export class Employment extends BaseEntity {
   @Column()
   jobSeekerId!: string;
 
-  @ManyToOne(type => JobSeekerProfile, jobSeekerProfile => jobSeekerProfile.id) jobSeekerProfile!: JobSeekerProfile;
+  @ManyToOne(type => JobSeekerProfile, jobSeekerProfile => jobSeekerProfile.id,{onDelete:'CASCADE'})
+  jobSeekerProfile!: JobSeekerProfile;
 
   @Column()
   currentlyEmployed!: boolean
