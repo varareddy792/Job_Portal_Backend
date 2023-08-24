@@ -1,6 +1,6 @@
 import { Seeder } from 'typeorm-extension';
 import { DataSource } from 'typeorm';
-import { HighestQualification } from '../HighestQualification';
+import { HighestQualification } from '../highestQualification.entity';
 
 export default class HighestQualificationSeeder implements Seeder {
   public async run(

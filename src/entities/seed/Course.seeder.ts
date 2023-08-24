@@ -1,6 +1,6 @@
 import { Seeder } from 'typeorm-extension';
 import { DataSource } from 'typeorm';
-import { Course } from '../Course';
+import { Course } from '../course.entity';
 
 export default class CourseSeeder implements Seeder {
   public async run(

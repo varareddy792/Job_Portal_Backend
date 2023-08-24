@@ -1,6 +1,6 @@
 import { Seeder } from 'typeorm-extension';
 import { DataSource } from 'typeorm';
-import { NoticePeriod } from '../NoticePeriod';
+import { NoticePeriod } from '../noticePeriod.entity';
 
 export default class NoticePeriodSeeder implements Seeder {
   public async run(

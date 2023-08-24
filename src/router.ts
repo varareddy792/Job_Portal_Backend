@@ -1,0 +1,55 @@
+import { Router } from 'express';
+import authRouter from './routers/auth.router';
+import multerRouter from './routers/multer/multer';
+import jobSeekerProfileRouter from './routers/jobSeekerProfile.router';
+import educationTypeRouter from './routers/educationType.router';
+import availabilityToJoinRouter from './routers/availabilityToJoin.router';
+import companyRouter from './routers/company.router';
+import courseRouter from './routers/course.router';
+import courseTypeRouter from './routers/courseType.router';
+import currencyRouter from './routers/currency.router';
+import departmentRouter from './routers/department.router';
+import genderRouter from './routers/gender.router';
+import highestQualificationRouter from './routers/highestQualification.router';
+import industryRouter from './routers/industry.router';
+import jobRoleRouter from './routers/jobRole.router';
+import jobTitleRouter from './routers/jobTitle.router';
+import keySkillsRouter from './routers/keySkills.router';
+import locationRouter from './routers/location.router';
+import noticePeriodRouter from './routers/noticePeriod.router';
+import roleCategoryRouter from './routers/roleCategory.router';
+import specializationRouter from './routers/specialization.router';
+import stateRouter from './routers/state.router';
+import totalExpMonthRouter from './routers/totalExpMonth.router';
+import totalExpYearRouter from './routers/totalExpYear.router';
+import universityInstituteRouter from './routers/universityInstitute.router';
+
+const router = Router();
+
+router.use(['/auth'], authRouter);
+router.use(['/multer'], multerRouter);
+router.use(['/availabilityToJoin'], availabilityToJoinRouter);
+router.use(['/company'], companyRouter);
+router.use(['/course'], courseRouter);
+router.use(['/courseType'], courseTypeRouter);
+router.use(['/currency'], currencyRouter);
+router.use(['/department'], departmentRouter);
+router.use(['/educationType'], educationTypeRouter);
+router.use(['/gender'], genderRouter);
+router.use(['/highestQualification'], highestQualificationRouter);
+router.use(['/industry'], industryRouter);
+router.use(['/jobRole'], jobRoleRouter);
+router.use(['/jobSeekerProfile'], jobSeekerProfileRouter);
+router.use(['/jobTitle'], jobTitleRouter);
+router.use(['/keySkills'], keySkillsRouter);
+router.use(['/location'], locationRouter);
+router.use(['/noticePeriod'], noticePeriodRouter);
+router.use(['/roleCategory'], roleCategoryRouter);
+router.use(['/specialization'], specializationRouter);
+router.use(['/state'], stateRouter);
+router.use(['/totalExpMonth'], totalExpMonthRouter);
+router.use(['/totalExpYear'], totalExpYearRouter);
+
+router.use(['/universityInstitute'], universityInstituteRouter);
+
+export default router;   

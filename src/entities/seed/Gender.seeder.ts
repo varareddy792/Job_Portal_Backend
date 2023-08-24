@@ -1,6 +1,6 @@
 import { Seeder } from 'typeorm-extension';
 import { DataSource } from 'typeorm';
-import { Gender } from '../Gender';
+import { Gender } from '../gender.entity';
 
 export default class GenderSeeder implements Seeder {
   public async run(

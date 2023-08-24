@@ -1,6 +1,6 @@
 import { Seeder } from 'typeorm-extension';
 import { DataSource } from 'typeorm';
-import { Specialization } from '../Specialization';
+import { Specialization } from '../specialization.entity';
 
 export default class SpecializationSeeder implements Seeder {
   public async run(

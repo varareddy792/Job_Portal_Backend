@@ -1,7 +1,7 @@
 import express, { Express, NextFunction, Response } from 'express';
 import cors from 'cors';
 import * as bodyParser from 'body-parser';
-import router from './routers';
+import router from './router';
 import { errorHandler } from './middlewares/errorHandler';
 import { AppDataSource } from './config/typeorm';
 import passport from 'passport';
@@ -36,6 +36,8 @@ app.use(passport.session());
 app.use(bodyParser.urlencoded({ extended: true, limit: process.env.FILE_LIMIT }));
 app.use(bodyParser.json());
 app.use(logger('dev'));
+
+//parent router
 app.use(router);
 
 /// catch 404 and forward to error handler
