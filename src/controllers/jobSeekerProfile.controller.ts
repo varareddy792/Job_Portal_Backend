@@ -35,7 +35,7 @@ export const updateJobSeekerResume = async (req: Request, res: Response) => {
     }).single('file'));
 
     await upload(req, res);
-    const { id } = req.body;
+    const { id } = req.user;;
    
     let jobSeekerParams: JobSeekerProfile = req.body;
     if (!req.file) {

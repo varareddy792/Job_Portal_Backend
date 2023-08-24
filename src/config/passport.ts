@@ -6,6 +6,7 @@ import passport from 'passport';
 import { User } from '../entities/user.entity';
 import { NextFunction, Request } from 'express';
 import bcrypt from 'bcrypt';
+import { saveJobSeekerProfile } from '../services/jobSeeker/jobSeekerProfile';
 
 type JWTPayLoad = {
   email: string,
@@ -45,7 +46,13 @@ passport.use(new GoogleStrategy({
       user.accountType = 'google';
       user.email = profile.emails[0].value;
       user.name = `${profile.name.givenName}   ${profile.name.familyName}`;
-      await user.save();
+      const userData = await user.save();
+      const jobSeekerParams = {
+        userId: userData.id,
+        id: userData.id,
+        workStatus:false
+      }
+      const jobSeeker = await saveJobSeekerProfile(jobSeekerParams);
       return done(null, user)
     } catch (error) {
       console.log('error ', error);
@@ -77,7 +84,6 @@ passport.use(new JWTStrategy(jwtOptions, async (req: Request, payload: JWTPayLoa
 passport.use(new LocalStrategy({ usernameField: 'email', passwordField: 'password' },
   async (email, password, done) => {
     try {
-      console.log()
       const user = await User.findOneBy({
         email
       });
