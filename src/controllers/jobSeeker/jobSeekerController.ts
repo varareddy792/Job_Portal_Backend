@@ -1,5 +1,5 @@
 import { Request,Response } from 'express';
-import { updateJobSeekerProfile } from '../../services/jobSeeker/jobSeekerProfile';
+import { getEducation, saveEducation, updateJobSeekerProfile } from '../../services/jobSeeker/jobSeekerProfile';
 import { JobSeekerProfile } from '../../entities/JobSeekerProfile';
 import multer from 'multer';
 import { storageResume, fileFilterDocument,fileFilterImage} from '../../config/multer';
@@ -69,5 +69,35 @@ export const updateJobSeekerResume = async (req: Request, res: Response) => {
         });
       }      
     }
+  }
+}
+
+export const addOrUpdateEducation = async (req: Request, res: Response) => {
+  try {
+    console.log("req", req.body);
+    const user = await saveEducation(req.body);
+    res.status(201).json({
+      message: 'Education details added successfully',
+      data: user
+    });
+  } catch (error:any) {
+    return res.status(500).json({
+      message: 'Internal Server Error',
+      error: error.sqlMessage
+    });
+  }
+}
+
+export const getEducationDetails = async (req: Request, res: Response) => {
+  try {
+    const education = await getEducation();
+    res.status(200).json({
+      data: education
+    });
+  } catch (error:any) {
+    return res.status(500).json({
+      message: 'Internal Server Error',
+      error: error.sqlMessage
+    });
   }
 }

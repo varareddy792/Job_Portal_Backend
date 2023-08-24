@@ -46,7 +46,8 @@ export class JobSeekerProfile extends BaseEntity {
   @JoinColumn()
   noticePeriod!: NoticePeriod
 
-  @OneToMany(() => Education, (education) => education.jobSeeker, { createForeignKeyConstraints: true, cascade: true })
+  @OneToMany(() => Education, (education) => education.jobSeekerProfile, { createForeignKeyConstraints: true, cascade: true })
+  //@OneToMany(() => Education,(education)=>education.jobSeekerProfile)
   educations!: Education[]
   
   @OneToOne(() => User)
