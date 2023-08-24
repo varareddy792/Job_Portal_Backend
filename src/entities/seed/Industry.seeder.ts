@@ -1,6 +1,6 @@
 import { Seeder } from 'typeorm-extension';
 import { DataSource } from 'typeorm';
-import { Industry } from '../Industry';
+import { Industry } from '../industry.entity';
 
 export default class IndustrySeeder implements Seeder {
   public async run(

@@ -1,6 +1,6 @@
 import { Seeder } from 'typeorm-extension';
 import { DataSource } from 'typeorm';
-import { State } from '../State';
+import { State } from '../state.entity';
 
 export default class StateSeeder implements Seeder {
   public async run(

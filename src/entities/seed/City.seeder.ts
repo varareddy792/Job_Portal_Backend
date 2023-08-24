@@ -1,7 +1,7 @@
 import { Seeder } from 'typeorm-extension';
 import { DataSource } from 'typeorm';
-import { City } from '../City';
-import { State } from '../State';
+import { City } from '../city.entity';
+import { State } from '../state.entity';
 
 export default class CitySeeder implements Seeder {
   public async run(

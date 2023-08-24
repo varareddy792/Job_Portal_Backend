@@ -1,6 +1,6 @@
 import { Seeder } from 'typeorm-extension';
 import { DataSource } from 'typeorm';
-import { KeySkills } from '../KeySkills';
+import { KeySkills } from '../keySkills.entity';
 
 export default class KeySkillsSeeder implements Seeder {
   public async run(

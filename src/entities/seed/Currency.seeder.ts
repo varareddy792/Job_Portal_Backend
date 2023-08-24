@@ -1,6 +1,6 @@
 import { Seeder } from 'typeorm-extension';
 import { DataSource } from 'typeorm';
-import { Currency } from '../Currency';
+import { Currency } from '../currency.entity';
 
 export default class CurrencySeeder implements Seeder {
   public async run(

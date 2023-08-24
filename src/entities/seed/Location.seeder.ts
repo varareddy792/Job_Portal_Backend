@@ -1,6 +1,6 @@
 import { Seeder } from 'typeorm-extension';
 import { DataSource } from 'typeorm';
-import { Location } from '../Location';
+import { Location } from '../location.entity';
 
 export default class LocationSeeder implements Seeder {
   public async run(

@@ -1,5 +1,5 @@
 import jwt, { Secret } from 'jsonwebtoken';
-import { User } from '../entities/User';
+import { User } from '../entities/user.entity';
 
 export const generateToken = async (user: User) => {
   try {

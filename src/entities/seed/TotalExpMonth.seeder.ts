@@ -1,6 +1,6 @@
 import { Seeder, SeederFactoryManager } from 'typeorm-extension';
 import { DataSource } from 'typeorm';
-import { TotalExpMonth } from '../TotalExpMonth';
+import { TotalExpMonth } from '../totalExpMonth.entity';
 
 export default class TotalExpMonthSeeder implements Seeder {
   public async run(

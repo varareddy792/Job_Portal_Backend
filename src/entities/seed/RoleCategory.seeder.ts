@@ -1,6 +1,6 @@
 import { Seeder } from 'typeorm-extension';
 import { DataSource } from 'typeorm';
-import { RoleCategory } from '../RoleCategory';
+import { RoleCategory } from '../roleCategory.entity';
 
 export default class RoleCategorySeeder implements Seeder {
   public async run(

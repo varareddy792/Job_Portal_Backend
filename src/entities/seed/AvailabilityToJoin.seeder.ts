@@ -1,6 +1,6 @@
 import { Seeder } from 'typeorm-extension';
 import { DataSource } from 'typeorm';
-import { AvailabilityToJoin } from '../AvailabilityToJoin';
+import { AvailabilityToJoin } from '../availabilityToJoin.entity';
 
 export default class AvailabilityToJoinSeeder implements Seeder {
   public async run(

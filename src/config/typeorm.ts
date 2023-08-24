@@ -2,53 +2,55 @@ import 'reflect-metadata';
 import { DataSource, DataSourceOptions } from 'typeorm';
 import { SeederOptions } from 'typeorm-extension';
 import 'dotenv/config';
-import { User } from '../entities/User';
-import { Employment } from '../entities/Employment';
-import { JobSeekerProfile } from '../entities/JobSeekerProfile';
-import { TotalExpYear } from '../entities/TotalExpYear';
-import TotalExpYearSeeder from '../entities/seed/TotalExpYear.seeder';
-import { TotalExpMonth } from '../entities/TotalExpMonth';
-import TotalExpMonthSeeder from '../entities/seed/TotalExpMonth.seeder';
-import { Company } from '../entities/Company';
-import CompanySeeder from '../entities/seed/Company.seeder';
-import { JobTitle } from '../entities/JobTitle';
-import JobTitleSeeder from '../entities/seed/JobTitle.seeder';
-import { Currency } from '../entities/Currency';
-import CurrencySeeder from '../entities/seed/Currency.seeder';
-import { State } from '../entities/State';
-import { City } from '../entities/City';
-import StateSeeder from '../entities/seed/State.seeder';
+import { User } from '../entities/user.entity';
+import { Employment } from '../entities/employment.entity';
+import { JobSeekerProfile } from '../entities/jobSeekerProfile.entity';
+import { TotalExpYear } from '../entities/totalExpYear.entity';
+import TotalExpYearSeeder from '../entities/seed/totalExpYear.seeder';
+import { TotalExpMonth } from '../entities/totalExpMonth.entity';
+import TotalExpMonthSeeder from '../entities/seed/totalExpMonth.seeder';
+import { Company } from '../entities/company.entity';
+import CompanySeeder from '../entities/seed/company.seeder';
+import { JobTitle } from '../entities/jobTitle.entity';
+import JobTitleSeeder from '../entities/seed/jobTitle.seeder';
+import { Currency } from '../entities/currency.entity';
+import CurrencySeeder from '../entities/seed/currency.seeder';
+import { State } from '../entities/state.entity';
+import { City } from '../entities/city.entity';
+import StateSeeder from '../entities/seed/state.seeder';
 // import CitySeeder from '../entities/seed/City.seeder';
-import { NoticePeriod } from '../entities/NoticePeriod';
-import NoticePeriodSeeder from '../entities/seed/NoticePeriod.seeder';
-import { AvailabilityToJoin } from '../entities/AvailabilityToJoin';
-import AvailabilityToJoinSeeder from '../entities/seed/AvailabilityToJoin.seeder';
-import { KeySkills } from '../entities/KeySkills';
-import KeySkillsSeeder from '../entities/seed/KeySkills.seeder';
-import { Industry } from '../entities/Industry';
-import IndustrySeeder from '../entities/seed/Industry.seeder';
-import { Department } from '../entities/Department';
-import DepartmentSeeder from '../entities/seed/Department.seeder';
-import { RoleCategory } from '../entities/RoleCategory';
-import { JobRole } from '../entities/JobRole';
-import RoleCategorySeeder from '../entities/seed/RoleCategory.seeder';
-import JobRoleSeeder from '../entities/seed/JobRole.seeder';
-import { Education } from '../entities/Education';
-import { HighestQualification } from '../entities/HighestQualification';
-import HighestQualificationSeeder from '../entities/seed/HighestQualification.seeder';
-import { Course } from '../entities/Course';
-import CourseSeeder from '../entities/seed/Course.seeder';
-import { Specialization } from '../entities/Specialization';
-import SpecializationSeeder from '../entities/seed/Specialization.seeder';
-import { CourseType } from '../entities/CourseType';
-import CourseTypeSeeder from '../entities/seed/CourseType.seeder';
-import { UniversityInstitute } from '../entities/UniversityInstitute';
-import UniversityInstituteSeeder from '../entities/seed/UniversityInstitute.seeder';
-import { Gender } from '../entities/Gender';
-import GenderSeeder from '../entities/seed/Gender.seeder';
-import { Location } from '../entities/Location';
-import LocationSeeder from '../entities/seed/Location.seeder';
-import CitySeeder from '../entities/seed/City.seeder';
+import { NoticePeriod } from '../entities/noticePeriod.entity';
+import NoticePeriodSeeder from '../entities/seed/noticePeriod.seeder';
+import { AvailabilityToJoin } from '../entities/availabilityToJoin.entity';
+import AvailabilityToJoinSeeder from '../entities/seed/availabilityToJoin.seeder';
+import { KeySkills } from '../entities/keySkills.entity';
+import KeySkillsSeeder from '../entities/seed/keySkills.seeder';
+import { Industry } from '../entities/industry.entity';
+import IndustrySeeder from '../entities/seed/industry.seeder';
+import { Department } from '../entities/department.entity';
+import DepartmentSeeder from '../entities/seed/department.seeder';
+import { RoleCategory } from '../entities/roleCategory.entity';
+import { JobRole } from '../entities/jobRole.entity';
+import RoleCategorySeeder from '../entities/seed/roleCategory.seeder';
+import JobRoleSeeder from '../entities/seed/jobRole.seeder';
+import { Education } from '../entities/education.entity';
+import { HighestQualification } from '../entities/highestQualification.entity';
+import HighestQualificationSeeder from '../entities/seed/highestQualification.seeder';
+import { Course } from '../entities/course.entity';
+import CourseSeeder from '../entities/seed/course.seeder';
+import { Specialization } from '../entities/specialization.entity';
+import SpecializationSeeder from '../entities/seed/specialization.seeder';
+import { CourseType } from '../entities/courseType.entity';
+import CourseTypeSeeder from '../entities/seed/courseType.seeder';
+import { UniversityInstitute } from '../entities/universityInstitute.entity';
+import UniversityInstituteSeeder from '../entities/seed/universityInstitute.seeder';
+import { Gender } from '../entities/gender.entity';
+import GenderSeeder from '../entities/seed/gender.seeder';
+import { Location } from '../entities/location.entity';
+import LocationSeeder from '../entities/seed/location.seeder';
+import CitySeeder from '../entities/seed/city.seeder';
+import { EducationType } from '../entities/educationType.entity';
+import EducationTypeSeeder from '../entities/seed/educationType.seeder';
 
 if (process.env.DB_NAME === undefined) {
   throw new Error('Dbname cannot be undefined')
@@ -86,8 +88,8 @@ const options: DataSourceOptions & SeederOptions = {
   database: process.env.DB_NAME,
   synchronize: true,
   // logging: true,
-  entities: [User, JobSeekerProfile, Employment, TotalExpYear, TotalExpMonth, Company, JobTitle, Currency, State, City, NoticePeriod, AvailabilityToJoin, KeySkills, Industry, Department, RoleCategory, JobRole, Education, HighestQualification, Course, Specialization, CourseType, UniversityInstitute, Gender, Location],
-  seeds: [TotalExpYearSeeder, TotalExpMonthSeeder, CompanySeeder, JobTitleSeeder, CurrencySeeder, StateSeeder, NoticePeriodSeeder, AvailabilityToJoinSeeder, KeySkillsSeeder, IndustrySeeder, DepartmentSeeder, RoleCategorySeeder, JobRoleSeeder, HighestQualificationSeeder, CourseSeeder, SpecializationSeeder, CourseTypeSeeder, UniversityInstituteSeeder, GenderSeeder, LocationSeeder],
+  entities: [User, JobSeekerProfile, Employment, TotalExpYear, TotalExpMonth, Company, JobTitle, Currency, State, City, NoticePeriod, AvailabilityToJoin, KeySkills, Industry, Department, RoleCategory, JobRole, Education, HighestQualification, Course, Specialization, CourseType, UniversityInstitute, Gender, Location, EducationType],
+  seeds: [TotalExpYearSeeder, TotalExpMonthSeeder, CompanySeeder, JobTitleSeeder, CurrencySeeder, StateSeeder, NoticePeriodSeeder, AvailabilityToJoinSeeder, KeySkillsSeeder, IndustrySeeder, DepartmentSeeder, RoleCategorySeeder, JobRoleSeeder, HighestQualificationSeeder, CourseSeeder, SpecializationSeeder, CourseTypeSeeder, UniversityInstituteSeeder, GenderSeeder, LocationSeeder, EducationTypeSeeder],
   subscribers: [],
   migrations: [],
 }

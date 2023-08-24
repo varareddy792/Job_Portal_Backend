@@ -3,7 +3,7 @@ import jwtPassport from 'passport-jwt';
 import localPassport from 'passport-local';
 import 'dotenv/config';
 import passport from 'passport';
-import { User } from '../entities/User';
+import { User } from '../entities/user.entity';
 import { NextFunction, Request } from 'express';
 import bcrypt from 'bcrypt';
 
