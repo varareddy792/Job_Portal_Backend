@@ -74,7 +74,6 @@ export const updateJobSeekerResume = async (req: Request, res: Response) => {
 
 export const addOrUpdateEducation = async (req: Request, res: Response) => {
   try {
-    console.log("req", req.body);
     const user = await saveEducation(req.body);
     res.status(201).json({
       message: 'Education details added successfully',
