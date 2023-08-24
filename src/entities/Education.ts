@@ -10,7 +10,7 @@ export class Education extends BaseEntity {
   @Column()
   jobSeekerId!: string;
 
-  @ManyToOne(() => JobSeekerProfile, (jobSeekerProfile) => jobSeekerProfile.educations)
+  @ManyToOne(() => JobSeekerProfile, (jobSeekerProfile) => jobSeekerProfile.educations,{onDelete:'CASCADE'})
   jobSeeker!: JobSeekerProfile
 
   @Column()

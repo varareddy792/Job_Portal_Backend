@@ -2,8 +2,9 @@ import { Request,Response } from 'express';
 import { updateJobSeekerProfile } from '../../services/jobSeeker/jobSeekerProfile';
 import { JobSeekerProfile } from '../../entities/JobSeekerProfile';
 import multer from 'multer';
-import { storage, fileFilter } from '../../config/multer';
+import { storageResume, fileFilterDocument,fileFilterImage} from '../../config/multer';
 import { promisify } from 'util';
+import 'dotenv/config';
 
 export const updateJobSeekerProfileController = async (req: Request, res: Response) => {
   
@@ -24,10 +25,14 @@ export const updateJobSeekerProfileController = async (req: Request, res: Respon
 
 export const updateJobSeekerResume = async (req: Request, res: Response) => {
   try {
-   
+    if (process.env.FILE_LIMIT === undefined) {
+      throw new Error('file limit cannot be undefined')
+    }
+    
     const upload = promisify(multer({
-      storage,
-      fileFilter
+      storage:storageResume,
+      fileFilter: fileFilterDocument,
+      limits: { fileSize: parseInt(process.env.FILE_LIMIT) }
     }).single('file'));
 
     await upload(req, res);
@@ -40,16 +45,29 @@ export const updateJobSeekerResume = async (req: Request, res: Response) => {
       jobSeekerParams.resume = req.file.path
     };
    
-    const jobSeekerProfile = await updateJobSeekerProfile(id,jobSeekerParams)
+    const jobSeekerProfile = await updateJobSeekerProfile(id, jobSeekerParams)
     return res.status(200).json(
       { message: 'success' }
     );
-
     
   } catch (error) {
     console.log('error', error);
-    return res.status(500).json({
-      message: 'Internal Server Error'
-    });
+    if (error instanceof multer.MulterError) {
+      if (error.code === 'LIMIT_FILE_SIZE') {
+        return res.status(400).json({
+          message: 'File size larger then 2MB'
+        })
+      } 
+    } else {
+      if (error instanceof Error) {
+        return res.status(400).json({
+          message: error.message
+        });
+      } else {
+        return res.status(500).json({
+          message: 'Internal server error'
+        });
+      }      
+    }
   }
 }
