@@ -31,6 +31,8 @@ export class JobSeekerProfile extends BaseEntity {
 
   // @Column({ default: null })
   // currentLocation!: string
+  @Column({ default: null })
+  resumeHeadline!: string
 
   @OneToOne(() => Location)
   @JoinColumn()

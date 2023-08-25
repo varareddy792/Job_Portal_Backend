@@ -9,9 +9,9 @@ export class Education extends BaseEntity {
   // @Column()
   // jobSeekerId!: string;
 
-  @ManyToOne(() => JobSeekerProfile, (jobSeekerProfile) => jobSeekerProfile.educations,{onDelete:'CASCADE'})
+  @ManyToOne(() => JobSeekerProfile, (jobSeekerProfile) => jobSeekerProfile.educations, { onDelete: 'CASCADE' })
   jobSeekerProfile!: JobSeekerProfile
-  
+
   // @ManyToOne(() => JobSeekerProfile, (jobSeekerProfile) => jobSeekerProfile.educations, { nullable: false })
   // @JoinColumn({ name: 'jobSeekerProfile' })
   // jobSeekerProfile!: JobSeekerProfile
@@ -38,7 +38,7 @@ export class Education extends BaseEntity {
   passingYear!: string
 
   @Column()
-  percentage!:string
+  percentage!: string
   //@Column()
   //resumeHeadline!: string
 

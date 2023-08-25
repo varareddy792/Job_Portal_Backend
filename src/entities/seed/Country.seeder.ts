@@ -1,22 +1,21 @@
 import { Seeder } from 'typeorm-extension';
 import { DataSource } from 'typeorm';
-import { State } from '../state.entity';
+import { Country } from '../country.entity';
 
-export default class StateSeeder implements Seeder {
+export default class CountrySeeder implements Seeder {
   public async run(
     dataSource: DataSource,
   ): Promise<any> {
-    const repository = dataSource.getRepository(State);
+    const repository = dataSource.getRepository(Country);
     await repository.upsert([
       {
-        title: 'Andhra Pradesh',
+        title: 'India',
         status: true,
       },
       {
-        title: 'Arunachal Pradesh',
+        title: 'United State',
         status: true,
       }
-
 
     ],
       ["id"]);

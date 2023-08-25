@@ -1,8 +1,7 @@
 import { Entity, PrimaryGeneratedColumn, Column, BaseEntity, ManyToOne } from 'typeorm';
-import { State } from './state.entity';
 
 @Entity()
-export class City extends BaseEntity {
+export class Country extends BaseEntity {
   @PrimaryGeneratedColumn()
   id!: number
 
