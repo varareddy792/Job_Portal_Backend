@@ -49,7 +49,6 @@ export const keySkillsGetController: RequestHandler = async (req: Request, res: 
       data: result
     });
   } catch (error) {
-    console.log('error', error);
     return res.status(500).json({
       message: 'Internal server error'
     })
