@@ -42,11 +42,11 @@ export const registerUser: RequestHandler = async (req: Request, res: Response, 
     }).single('file'));
 
     await upload(req, res);
-
+    let resumePath;
     if (!req.file) {
-      userParams.resumePath = 'no path';
+      resumePath = 'no path';
     } else {
-      userParams.resumePath = req.file.path;
+      resumePath = req.file.path;
     };
 
     const user = await saveUser(userParams);
@@ -77,13 +77,15 @@ export const registerUser: RequestHandler = async (req: Request, res: Response, 
         const jobSeekerParams = {
           userId: user.id,
           workStatus,
-          id:user.id
+          id: user.id,
+          resume:resumePath
         }
         const jobSeeker = await saveJobSeekerProfile(jobSeekerParams);
         OutPutData.jobSeekProfileId = jobSeeker.id
       }
     }
     const token = await generateToken(user);
+    console.log('token', token);
     res.cookie('token', token);
     return res.status(201).json({
       message: 'User successfully saved',
