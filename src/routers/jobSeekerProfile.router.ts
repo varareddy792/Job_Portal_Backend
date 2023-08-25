@@ -13,8 +13,8 @@ import { keySkillsController, keySkillsGetController } from '../controllers/keyS
 
 const jobSeekerProfileRouter = Router();
 
-jobSeekerProfileRouter.post('/resume', passport.authenticate('jwt', { session: false }), updateJobSeekerResume);
-jobSeekerProfileRouter.post('/profilePicture', passport.authenticate('jwt', { session: false }), updateJobSeekerProfilePicture);
+jobSeekerProfileRouter.put('/resume', passport.authenticate('jwt', { session: false }), updateJobSeekerResume);
+jobSeekerProfileRouter.put('/profilePicture', passport.authenticate('jwt', { session: false }), updateJobSeekerProfilePicture);
 jobSeekerProfileRouter.post('/education', addOrUpdateEducation);
 jobSeekerProfileRouter.get('/getEducation', getEducationDetails);
 jobSeekerProfileRouter.put('/profileDashboard', passport.authenticate('jwt', { session: false }), updateJobSeekerProfileController);

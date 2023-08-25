@@ -53,14 +53,18 @@ export const updateJobSeekerResume = async (req: Request, res: Response) => {
 
     let jobSeekerParams: JobSeekerProfile = req.body;
     if (!req.file) {
-      jobSeekerParams.resume = 'Empty file'
+      jobSeekerParams.resumePath = 'Empty file'
     } else {
-      jobSeekerParams.resume = req.file.path
+      jobSeekerParams.resumePath = req.file.filename
+      jobSeekerParams.resumeFile = req.file.originalname
     };
-
+  
     const jobSeekerProfile = await updateJobSeekerProfile(id, jobSeekerParams)
     return res.status(200).json(
-      { message: 'success' }
+      {
+        message: 'success',
+        data: jobSeekerProfile
+      }
     );
 
   } catch (error) {
@@ -106,12 +110,16 @@ export const updateJobSeekerProfilePicture = async (req: Request, res: Response)
         message: 'Profile Picture file is empty'
       });
     } else {
-      jobSeekerParams.profilePicture = req.file.path
+      jobSeekerParams.profilePicturePath = req.file.filename
+      jobSeekerParams.profilePictureFile= req.file.originalname
     };
 
     const jobSeekerProfile = await updateJobSeekerProfile(id, jobSeekerParams)
     return res.status(200).json(
-      { message: 'success' }
+      {
+        message: 'success',
+        data: jobSeekerProfile
+      }
     );
 
   } catch (error) {

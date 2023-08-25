@@ -14,10 +14,17 @@ export class JobSeekerProfile extends BaseEntity {
   workStatus!: boolean
 
   @Column({ default: null })
-  resume!: string
+  resumePath!: string
 
   @Column({ default: null })
-  profilePicture!: string
+  resumeFile!: string
+
+  @Column({ default: null })
+  profilePicturePath!: string
+
+
+  @Column({ default: null })
+  profilePictureFile!: string
 
   @Column({ default: null })
   noOfSections!: number
