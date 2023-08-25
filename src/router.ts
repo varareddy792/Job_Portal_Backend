@@ -1,18 +1,18 @@
 import { Router } from 'express';
-import authRouter from './routers/auth.router';
 import multerRouter from './routers/multer/multer';
-import jobSeekerProfileRouter from './routers/jobSeekerProfile.router';
-import educationTypeRouter from './routers/educationType.router';
+import authRouter from './routers/auth.router';
 import availabilityToJoinRouter from './routers/availabilityToJoin.router';
 import companyRouter from './routers/company.router';
 import courseRouter from './routers/course.router';
 import courseTypeRouter from './routers/courseType.router';
 import currencyRouter from './routers/currency.router';
 import departmentRouter from './routers/department.router';
+import educationTypeRouter from './routers/educationType.router';
 import genderRouter from './routers/gender.router';
 import highestQualificationRouter from './routers/highestQualification.router';
 import industryRouter from './routers/industry.router';
 import jobRoleRouter from './routers/jobRole.router';
+import jobSeekerProfileRouter from './routers/jobSeekerProfile.router';
 import jobTitleRouter from './routers/jobTitle.router';
 import keySkillsRouter from './routers/keySkills.router';
 import locationRouter from './routers/location.router';
@@ -23,6 +23,7 @@ import stateRouter from './routers/state.router';
 import totalExpMonthRouter from './routers/totalExpMonth.router';
 import totalExpYearRouter from './routers/totalExpYear.router';
 import universityInstituteRouter from './routers/universityInstitute.router';
+import passOutYearRouter from './routers/passOutYear.router';
 
 const router = Router();
 
@@ -49,7 +50,7 @@ router.use(['/specialization'], specializationRouter);
 router.use(['/state'], stateRouter);
 router.use(['/totalExpMonth'], totalExpMonthRouter);
 router.use(['/totalExpYear'], totalExpYearRouter);
-
 router.use(['/universityInstitute'], universityInstituteRouter);
+router.use(['/passOutYear'],passOutYearRouter)
 
 export default router;   
