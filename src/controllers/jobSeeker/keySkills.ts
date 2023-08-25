@@ -1,18 +1,17 @@
 
 import { Request, RequestHandler, Response, NextFunction } from 'express';
-import { keySkills, keySkillsDataSet } from '../../services/profile/keySkills';
+import { keySkills, keySkillsGet } from '../../services/jobSeeker/keySkills';
 
 export const keySkillsController: RequestHandler = async (req: Request, res: Response, next: NextFunction) => {
   try {
 
-    const id = req.params.id
-    const posts = { userId: '', keySkills: '' }
-    const resultData = await keySkillsDataSet("1").then(data => data);
-    const skillData = resultData[0].keySkills;
-    posts.userId = req.body.userId;
-    posts.keySkills = `${skillData},${req.body.keySkills}`;
+    const { id } = req.user
+    const posts: any = { userId: '', keySkills: '' }
 
-    const result = await keySkills(id, { posts });
+    posts.userId = id;
+    posts.keySkills = req.body.keySkills;
+
+    const result = await keySkills({ posts });
     return res.status(201).json({
       message: 'Key skill updated successfully',
       data: result
@@ -25,15 +24,12 @@ export const keySkillsController: RequestHandler = async (req: Request, res: Res
   };
 }
 
-
 export const keySkillsGetController: RequestHandler = async (req: Request, res: Response, next: NextFunction) => {
   try {
-
-    const id = req.params.id
-    const posts = { userId: '', keySkills: '' }
-    const result = await keySkills(id, { posts });
+    const id = req.user
+    const result = await keySkillsGet(id);
     return res.status(201).json({
-      message: 'Key skill updated successfully',
+      message: 'Key skill fetch successfully',
       data: result
     });
   } catch (error) {
