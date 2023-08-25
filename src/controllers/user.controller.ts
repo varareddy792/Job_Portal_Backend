@@ -85,6 +85,7 @@ export const registerUser: RequestHandler = async (req: Request, res: Response, 
       }
     }
     const token = await generateToken(user);
+    console.log('token', token);
     res.cookie('token', token);
     return res.status(201).json({
       message: 'User successfully saved',

@@ -16,7 +16,7 @@ export const storageResume = multer.diskStorage({
 
 export const storageProfilePicture= multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, path.resolve(__dirname, `..${path.sep}..${path.sep}upload`));
+    cb(null, path.resolve(__dirname, `..${path.sep}..${path.sep}uploadProfilePicture`));
   },
   filename: function (req, file, cb) {
     const uniqueSuffix = uuidv4();

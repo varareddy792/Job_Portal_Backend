@@ -6,7 +6,7 @@ import passport from 'passport';
 import { User } from '../entities/user.entity';
 import { NextFunction, Request } from 'express';
 import bcrypt from 'bcrypt';
-import { saveJobSeekerProfile } from '../services/jobSeeker/jobSeekerProfile';
+import { saveJobSeekerProfile } from '../services/jobSeekerProfile.service';
 
 type JWTPayLoad = {
   email: string,
