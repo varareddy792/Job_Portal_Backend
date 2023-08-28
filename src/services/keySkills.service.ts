@@ -1,5 +1,5 @@
 import { AppDataSource } from "../config/typeorm";
-import { Employment } from "../entities/employment.entity";
+import { JobSeekerProfile } from "../entities/jobSeekerProfile.entity";
 import { KeySkills } from "../entities/keySkills.entity";
 
 export const keySkillsList = async () => {
@@ -17,33 +17,40 @@ export const keySkillsList = async () => {
 
 export const keySkills = async ({ posts }: any) => {
   const { keySkills, userId } = posts;
-
   try {
-    if (keySkills) {
-      AppDataSource.getRepository(Employment).createQueryBuilder("employment")
-        .update<Employment>(Employment, { keySkills: keySkills })
-        .where("userId = :id", { id: userId })
-        .execute()
-    }
-    const queryResult = AppDataSource.getRepository(Employment)
-      .createQueryBuilder("employment").select("employment")
-      .where("employment.userId = :userId", { userId: userId })
+    AppDataSource.getRepository(JobSeekerProfile)
+      .createQueryBuilder("jobSeekerProfile").select("jobSeekerProfile")
+      .where("jobSeekerProfile.userId = :userId", { userId: userId })
+      .getOne().then(res => {
+        if (res?.id) {
+          AppDataSource.getRepository(JobSeekerProfile).createQueryBuilder("jobSeekerProfile")
+            .update<JobSeekerProfile>(JobSeekerProfile, { keySkills: keySkills })
+            .where("userId = :id", { id: userId })
+            .execute()
+        } else {
+          AppDataSource.getRepository(JobSeekerProfile).createQueryBuilder().insert()
+            .into(JobSeekerProfile)
+            .values([{ keySkills: keySkills, user: userId }]).execute();
+        }
+      });
+    const queryResult = AppDataSource.getRepository(JobSeekerProfile)
+      .createQueryBuilder("jobSeekerProfile").select("jobSeekerProfile")
+      .where("jobSeekerProfile.userId = :userId", { userId: userId })
       .getMany();
     return queryResult;
-
   } catch (error) {
     console.log('error', error);
     throw error;
   }
 }
+
 export const keySkillsGet = async ({ id }: any) => {
   try {
-    const queryResult = AppDataSource.getRepository(Employment)
-      .createQueryBuilder("employment").select("employment")
-      .where("employment.userId = :userId", { userId: id })
+    const queryResult = AppDataSource.getRepository(JobSeekerProfile)
+      .createQueryBuilder("jobSeekerProfile").select("jobSeekerProfile")
+      .where("jobSeekerProfile.userId = :userId", { userId: id })
       .getMany();
     return queryResult;
-
   } catch (error) {
     console.log('error', error);
     throw error;
