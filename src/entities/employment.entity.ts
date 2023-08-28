@@ -52,8 +52,8 @@ export class Employment extends BaseEntity {
   @Column({ default: null })
   noticePeriod!: string
 
-  @Column({ default: null })
-  keySkills!: string
+  //@Column({ default: null })
+  //keySkills!: string
 
   @Column({ default: null })
   industry!: string

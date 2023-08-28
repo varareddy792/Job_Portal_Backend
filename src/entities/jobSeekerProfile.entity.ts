@@ -1,14 +1,13 @@
-import { Entity, Column, OneToOne, JoinColumn, OneToMany, BaseEntity, PrimaryColumn } from 'typeorm';
+import { Entity, Column, OneToOne, JoinColumn, OneToMany, BaseEntity, PrimaryGeneratedColumn } from 'typeorm';
 import { NoticePeriod } from './noticePeriod.entity';
 import { Location } from './location.entity';
 import { Education } from './education.entity';
 import { Industry } from './industry.entity';
-import { KeySkills } from './keySkills.entity';
 import { User } from './user.entity';
 
 @Entity()
 export class JobSeekerProfile extends BaseEntity {
-  @PrimaryColumn()
+  @PrimaryGeneratedColumn('increment')
   id!: number
 
   @Column({ default: null })
@@ -41,8 +40,9 @@ export class JobSeekerProfile extends BaseEntity {
   @OneToMany(() => Location, (location) => location.jobSeekerProfile, { createForeignKeyConstraints: true, cascade: true })
   preferredLocations!: Location[]
 
-  @OneToMany(() => KeySkills, (keySkills) => keySkills.jobSeekerProfile, { createForeignKeyConstraints: true, cascade: true })
-  keySkills!: KeySkills[]
+  //@OneToMany(() => KeySkills, (keySkills) => keySkills.jobSeekerProfile, { createForeignKeyConstraints: true, cascade: true })
+  @Column({ default: null })
+  keySkills!: string
 
   @OneToMany(() => Industry, (industry) => industry.jobSeekerProfile, { createForeignKeyConstraints: true, cascade: true })
   industries!: Industry[]
