@@ -1,6 +1,6 @@
 import { Seeder } from 'typeorm-extension';
 import { DataSource } from 'typeorm';
-import { PassOutYear } from '../PassOutYear';
+import { PassOutYear } from '../passOutYear.entity';
 
 export default class PassoutYearSeeder implements Seeder {
   public async run(

@@ -26,7 +26,7 @@ export class JobSeekerProfile extends BaseEntity {
   @Column({ default: null })
   completedSections!: number
 
-  @Column({ default: null, type: 'text' })
+  @Column({ default: null, nullable: true, type: 'text' })
   profileSummary!: string
 
   // @Column({ default: null })
