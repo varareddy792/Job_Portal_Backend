@@ -5,7 +5,8 @@ import {
   updateJobSeekerProfileController,
   getJobSeekerProfileController,
   updateJobSeekerResume,
-  updateJobSeekerProfilePicture
+  updateJobSeekerProfilePicture,
+  deleteJobSeekerResume,
 } from '../controllers/jobSeekerProfile.controller';
 import passport from '../config/passport';
 import { resumeHeadlineController } from '../controllers/resumeHeadline.controller';
@@ -14,6 +15,7 @@ import { keySkillsController, keySkillsGetController } from '../controllers/keyS
 const jobSeekerProfileRouter = Router();
 
 jobSeekerProfileRouter.put('/resume', passport.authenticate('jwt', { session: false }), updateJobSeekerResume);
+jobSeekerProfileRouter.put('/resumeDelete', passport.authenticate('jwt', { session: false }), deleteJobSeekerResume);
 jobSeekerProfileRouter.put('/profilePicture', passport.authenticate('jwt', { session: false }), updateJobSeekerProfilePicture);
 jobSeekerProfileRouter.post('/education', addOrUpdateEducation);
 jobSeekerProfileRouter.get('/getEducation', getEducationDetails);

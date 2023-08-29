@@ -58,7 +58,7 @@ export const updateJobSeekerResume = async (req: Request, res: Response) => {
       jobSeekerParams.resumePath = req.file.filename
       jobSeekerParams.resumeFile = req.file.originalname
     };
-  
+
     const jobSeekerProfile = await updateJobSeekerProfile(id, jobSeekerParams)
     return res.status(200).json(
       {
@@ -111,7 +111,7 @@ export const updateJobSeekerProfilePicture = async (req: Request, res: Response)
       });
     } else {
       jobSeekerParams.profilePicturePath = req.file.filename
-      jobSeekerParams.profilePictureFile= req.file.originalname
+      jobSeekerParams.profilePictureFile = req.file.originalname
     };
 
     const jobSeekerProfile = await updateJobSeekerProfile(id, jobSeekerParams)
@@ -164,6 +164,27 @@ export const getEducationDetails = async (req: Request, res: Response) => {
     const education = await getEducation();
     res.status(200).json({
       data: education
+    });
+  } catch (error: any) {
+    return res.status(500).json({
+      message: 'Internal Server Error',
+      error: error.sqlMessage
+    });
+  }
+}
+
+
+export const deleteJobSeekerResume = async (req: Request, res: Response) => {
+  try {
+    const { id } = req.user;
+    let jobSeekerParams: JobSeekerProfile = req.body;
+    jobSeekerParams.resumeFile = '';
+    jobSeekerParams.resumePath = '';
+    jobSeekerParams.id = id
+    const jobSeekerProfile = await updateJobSeekerProfile(id, jobSeekerParams);
+    res.status(201).json({
+      message: 'JobSeekerProfile details added successfully',
+      data: jobSeekerProfile
     });
   } catch (error: any) {
     return res.status(500).json({

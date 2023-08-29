@@ -27,9 +27,9 @@ export const updateJobSeekerProfile = async (id: number, jobSeekerParams: JobSee
       ...(jobSeekerParams.currentLocation && { currentLocation: jobSeekerParams.currentLocation }),
       ...(jobSeekerParams.noticePeriod && { noticePeriod: jobSeekerParams.noticePeriod }),
       ...(jobSeekerParams.profilePicturePath && { profilePicture: jobSeekerParams.profilePicturePath }),
-      ...(jobSeekerParams.resumePath && { resume: jobSeekerParams.resumePath }),
       ...(jobSeekerParams.profilePictureFile && { profilePicture: jobSeekerParams.profilePictureFile }),
-      ...(jobSeekerParams.profilePictureFile && { resume: jobSeekerParams.profilePictureFile })
+      ...({ resumePath: jobSeekerParams.resumePath }),
+      ...({ resumeFile: jobSeekerParams.resumeFile })
     });
     const jobSeekerProfile = await jobSeekerProfileRepository.findOneBy({ id });
     return jobSeekerProfile;
