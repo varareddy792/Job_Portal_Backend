@@ -22,16 +22,17 @@ export const saveJobSeekerProfile = async (jobSeekerParams: Params) => {
 export const updateJobSeekerProfile = async (id: number, jobSeekerParams: JobSeekerProfile) => {
   try {
     const jobSeekerProfileRepository = AppDataSource.getRepository(JobSeekerProfile);
-    const jobSeekerProfile = await jobSeekerProfileRepository.update(id, {
+    await jobSeekerProfileRepository.update(id, {
       ...(jobSeekerParams.completedSections && { completedSections: jobSeekerParams.completedSections }),
       ...(jobSeekerParams.currentLocation && { currentLocation: jobSeekerParams.currentLocation }),
       ...(jobSeekerParams.noticePeriod && { noticePeriod: jobSeekerParams.noticePeriod }),
-      ...(jobSeekerParams.profilePicture && { profilePicture: jobSeekerParams.profilePicture }),
-      ...(jobSeekerParams.resume && { resume: jobSeekerParams.resume }),
-      ...(jobSeekerParams.profileSummary && { profileSummary: jobSeekerParams.profileSummary }),
+      ...(jobSeekerParams.profilePicturePath && { profilePicture: jobSeekerParams.profilePicturePath }),
+      ...(jobSeekerParams.profilePictureFile && { profilePicture: jobSeekerParams.profilePictureFile }),
+      ...({ resumePath: jobSeekerParams.resumePath }),
+      ...({ resumeFile: jobSeekerParams.resumeFile })
     });
+    const jobSeekerProfile = await jobSeekerProfileRepository.findOneBy({ id });
     return jobSeekerProfile;
-
   } catch (error) {
     console.log('error', error);
     throw error;
