@@ -13,11 +13,18 @@ export class JobSeekerProfile extends BaseEntity {
   @Column({ default: null })
   workStatus!: boolean
 
-  @Column({ default: null })
-  resume!: string
+  @Column({ default: null, nullable: true })
+  resumePath!: string 
 
-  @Column({ default: null })
-  profilePicture!: string
+  @Column({ default: null, nullable:true })
+  resumeFile!: string
+
+  @Column({ default: null , nullable:true})
+  profilePicturePath!: string 
+
+
+  @Column({ default: null, nullable:true })
+  profilePictureFile!: string
 
   @Column({ default: null })
   noOfSections!: number
@@ -44,6 +51,11 @@ export class JobSeekerProfile extends BaseEntity {
   @Column({ default: null })
   keySkills!: string
 
+  // @OneToMany(() => KeySkills, (keySkills) => keySkills.jobSeekerProfile,{createForeignKeyConstraints:true,cascade:true})
+  //   keySkills!:KeySkills[]
+  // @Column( 'simple-array')
+  //   keySkills!:string[]
+  
   @OneToMany(() => Industry, (industry) => industry.jobSeekerProfile, { createForeignKeyConstraints: true, cascade: true })
   industries!: Industry[]
 
