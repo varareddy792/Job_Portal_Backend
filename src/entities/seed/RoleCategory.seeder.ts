@@ -9,27 +9,19 @@ export default class RoleCategorySeeder implements Seeder {
     const repository = dataSource.getRepository(RoleCategory);
     await repository.upsert([
       {
-        title: '15 Days or less',
+        title: 'Engineering',
         status: true,
       },
       {
-        title: '1 Month',
+        title: 'Management',
         status: true,
       },
       {
-        title: '2 Months',
+        title: 'Operations, Maintenance & Support',
         status: true,
       },
       {
-        title: '3 Months',
-        status: true,
-      },
-      {
-        title: 'More than 3 Months',
-        status: true,
-      },
-      {
-        title: 'Serving Notice Period',
+        title: 'Production & Manufacturing - Other',
         status: true,
       }
     ],

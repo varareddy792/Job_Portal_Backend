@@ -51,6 +51,6 @@ router.use(['/state'], stateRouter);
 router.use(['/totalExpMonth'], totalExpMonthRouter);
 router.use(['/totalExpYear'], totalExpYearRouter);
 router.use(['/universityInstitute'], universityInstituteRouter);
-router.use(['/passOutYear'],passOutYearRouter)
+router.use(['/passOutYear'], passOutYearRouter)
 
 export default router;   
