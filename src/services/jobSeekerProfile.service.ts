@@ -1,6 +1,7 @@
 import { JobSeekerProfile } from '../entities/jobSeekerProfile.entity';
 import { AppDataSource } from '../config/typeorm';
 import { Education } from '../entities/education.entity';
+import { log } from 'console';
 
 type Params = {
   userId: number,
@@ -21,13 +22,14 @@ export const saveJobSeekerProfile = async (jobSeekerParams: Params) => {
 
 export const updateJobSeekerProfile = async (id: number, jobSeekerParams: JobSeekerProfile) => {
   try {
+    console.log('iservice ',jobSeekerParams)
     const jobSeekerProfileRepository = AppDataSource.getRepository(JobSeekerProfile);
     await jobSeekerProfileRepository.update(id, {
       ...(jobSeekerParams.completedSections && { completedSections: jobSeekerParams.completedSections }),
       ...(jobSeekerParams.currentLocation && { currentLocation: jobSeekerParams.currentLocation }),
       ...(jobSeekerParams.noticePeriod && { noticePeriod: jobSeekerParams.noticePeriod }),
-      ...(jobSeekerParams.profilePicturePath && { profilePicture: jobSeekerParams.profilePicturePath }),
-      ...(jobSeekerParams.profilePictureFile && { profilePicture: jobSeekerParams.profilePictureFile }),
+      ...( { profilePicturePath: jobSeekerParams.profilePicturePath }),
+      ...({ profilePictureFile: jobSeekerParams.profilePictureFile }),
       ...({ resumePath: jobSeekerParams.resumePath }),
       ...({ resumeFile: jobSeekerParams.resumeFile }),
       ...({ profileSummary: jobSeekerParams.profileSummary }),

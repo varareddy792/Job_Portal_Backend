@@ -5,6 +5,7 @@ import multer from 'multer';
 import { storageResume, fileFilterDocument, fileFilterImage, storageProfilePicture } from '../config/multer';
 import { promisify } from 'util';
 import 'dotenv/config';
+import { couldStartTrivia } from 'typescript';
 
 export const updateJobSeekerProfileController = async (req: Request, res: Response) => {
   try {
@@ -104,6 +105,7 @@ export const updateJobSeekerProfilePicture = async (req: Request, res: Response)
     await upload(req, res);
     const { id } = req.user;;
 
+    console.log('file ', req.file)
     let jobSeekerParams: JobSeekerProfile = req.body;
     if (!req.file) {
       return res.status(400).json({
@@ -113,7 +115,7 @@ export const updateJobSeekerProfilePicture = async (req: Request, res: Response)
       jobSeekerParams.profilePicturePath = req.file.filename
       jobSeekerParams.profilePictureFile = req.file.originalname
     };
-
+    console.log('params ', jobSeekerParams)
     const jobSeekerProfile = await updateJobSeekerProfile(id, jobSeekerParams)
     return res.status(200).json(
       {
