@@ -17,8 +17,8 @@ const jobSeekerProfileRouter = Router();
 jobSeekerProfileRouter.put('/resume', passport.authenticate('jwt', { session: false }), updateJobSeekerResume);
 jobSeekerProfileRouter.put('/resumeDelete', passport.authenticate('jwt', { session: false }), deleteJobSeekerResume);
 jobSeekerProfileRouter.put('/profilePicture', passport.authenticate('jwt', { session: false }), updateJobSeekerProfilePicture);
-jobSeekerProfileRouter.post('/education', addOrUpdateEducation);
-jobSeekerProfileRouter.get('/getEducation', getEducationDetails);
+jobSeekerProfileRouter.post('/education', passport.authenticate('jwt', { session: false }), addOrUpdateEducation);
+jobSeekerProfileRouter.get('/getEducation', passport.authenticate('jwt', { session: false }), getEducationDetails);
 jobSeekerProfileRouter.put('/profileDashboard', passport.authenticate('jwt', { session: false }), updateJobSeekerProfileController);
 jobSeekerProfileRouter.get('/getProfileDashboard', passport.authenticate('jwt', { session: false }), getJobSeekerProfileController);
 
