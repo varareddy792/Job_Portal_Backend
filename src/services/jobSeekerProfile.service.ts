@@ -85,9 +85,6 @@ export const getEducation = async () => {
   try {
     const educationRepository = AppDataSource.getRepository(Education);
     const education = await educationRepository.find();
-    //delete user.hashedPassword
-    console.log("education-->", education);
-
     return education;
 
   } catch (error) {
