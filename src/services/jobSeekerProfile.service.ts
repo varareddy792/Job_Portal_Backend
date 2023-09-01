@@ -22,7 +22,7 @@ export const saveJobSeekerProfile = async (jobSeekerParams: Params) => {
 
 export const updateJobSeekerProfile = async (id: number, jobSeekerParams: JobSeekerProfile) => {
   try {
-    console.log('iservice ',jobSeekerParams)
+  
     const jobSeekerProfileRepository = AppDataSource.getRepository(JobSeekerProfile);
     await jobSeekerProfileRepository.update(id, {
       ...(jobSeekerParams.completedSections && { completedSections: jobSeekerParams.completedSections }),
