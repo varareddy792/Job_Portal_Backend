@@ -7,9 +7,10 @@ import {
   updateJobSeekerResume,
   updateJobSeekerProfilePicture,
   deleteJobSeekerResume,
+  addOrUpdateCareerProfile,
+  getCareerProfileDetails,
 } from '../controllers/jobSeekerProfile.controller';
 import passport from '../config/passport';
-import { resumeHeadlineController } from '../controllers/resumeHeadline.controller';
 import { keySkillsController, keySkillsGetController } from '../controllers/keySkills.controller';
 
 const jobSeekerProfileRouter = Router();
@@ -22,8 +23,9 @@ jobSeekerProfileRouter.get('/getEducation', getEducationDetails);
 jobSeekerProfileRouter.put('/profileDashboard', passport.authenticate('jwt', { session: false }), updateJobSeekerProfileController);
 jobSeekerProfileRouter.get('/getProfileDashboard', passport.authenticate('jwt', { session: false }), getJobSeekerProfileController);
 
-jobSeekerProfileRouter.post('/resumeHeadline', passport.authenticate('jwt', { session: false }), resumeHeadlineController);
 jobSeekerProfileRouter.post('/keySkills', passport.authenticate('jwt', { session: false }), keySkillsController);
 jobSeekerProfileRouter.get('/keySkills', passport.authenticate('jwt', { session: false }), keySkillsGetController);
+jobSeekerProfileRouter.post('/careerProfile', passport.authenticate('jwt', { session: false }), addOrUpdateCareerProfile);
+jobSeekerProfileRouter.get('/getCareerProfile', passport.authenticate('jwt', { session: false }), getCareerProfileDetails);
 
 export default jobSeekerProfileRouter;

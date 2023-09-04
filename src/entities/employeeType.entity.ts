@@ -1,8 +1,7 @@
 import { Entity, PrimaryGeneratedColumn, Column, BaseEntity, ManyToOne } from 'typeorm';
-import { CareerProfile } from './careerProfile.entity';
 
 @Entity()
-export class Location extends BaseEntity {
+export class EmployeeType extends BaseEntity {
   @PrimaryGeneratedColumn()
   id!: number
 
