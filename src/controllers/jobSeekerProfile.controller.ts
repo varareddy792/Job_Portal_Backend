@@ -5,6 +5,7 @@ import multer from 'multer';
 import { storageResume, fileFilterDocument, fileFilterImage, storageProfilePicture } from '../config/multer';
 import { promisify } from 'util';
 import 'dotenv/config';
+import { couldStartTrivia } from 'typescript';
 
 export const updateJobSeekerProfileController = async (req: Request, res: Response) => {
   try {
@@ -183,7 +184,27 @@ export const deleteJobSeekerResume = async (req: Request, res: Response) => {
     jobSeekerParams.id = id
     const jobSeekerProfile = await updateJobSeekerProfile(id, jobSeekerParams);
     res.status(201).json({
-      message: 'JobSeekerProfile details added successfully',
+      message: 'JobSeekerProfile resume deleted successfully',
+      data: jobSeekerProfile
+    });
+  } catch (error: any) {
+    return res.status(500).json({
+      message: 'Internal Server Error',
+      error: error.sqlMessage
+    });
+  }
+}
+
+export const deleteJobSeekerProfilePicture = async (req: Request, res: Response) => {
+  try {
+    const { id } = req.user;
+    let jobSeekerParams: JobSeekerProfile = req.body;
+    jobSeekerParams.profilePictureFile = req.body.profilePictureFile;
+    jobSeekerParams.profilePicturePath = req.body.profilePicturePath;
+    jobSeekerParams.id = id
+    const jobSeekerProfile = await updateJobSeekerProfile(id, jobSeekerParams);
+    res.status(201).json({
+      message: 'JobSeekerProfile picture deleted successfully',
       data: jobSeekerProfile
     });
   } catch (error: any) {
