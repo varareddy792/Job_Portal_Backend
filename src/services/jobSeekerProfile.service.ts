@@ -38,6 +38,7 @@ export const updateJobSeekerProfile = async (id: number, jobSeekerParams: JobSee
       ...({ resumePath: jobSeekerParams.resumePath }),
       ...({ resumeFile: jobSeekerParams.resumeFile }),
       ...({ resumeHeadline: jobSeekerParams.resumeHeadline }),
+      ...({ profileSummary: jobSeekerParams.profileSummary }),
     });
     const jobSeekerProfile = await jobSeekerProfileRepository.findOneBy({ id });
     return jobSeekerProfile;
@@ -181,10 +182,21 @@ export const getCareerProfile = async () => {
 
 export const saveEducation = async (educationParams: Education) => {
   console.log("educationParams-->", educationParams);
-
   try {
+    let education: any;
     const educationRepository = AppDataSource.getRepository(Education);
-    const education = await educationRepository.save(educationParams);
+    if (educationParams?.id) {
+      let updatedValue = await educationRepository.update(educationParams.id, { ...educationParams });
+      if (updatedValue.affected == 1) {
+        education = await educationRepository.findOne({
+          where: {
+            id: educationParams.id
+          }
+        })
+      }
+    } else {
+      education = await educationRepository.save(educationParams);
+    }
     //delete user.hashedPassword
     console.log("education-->", education);
 
@@ -201,9 +213,6 @@ export const getEducation = async () => {
   try {
     const educationRepository = AppDataSource.getRepository(Education);
     const education = await educationRepository.find();
-    //delete user.hashedPassword
-    console.log("education-->", education);
-
     return education;
 
   } catch (error) {

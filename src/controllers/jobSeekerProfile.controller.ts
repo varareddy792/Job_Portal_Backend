@@ -147,10 +147,10 @@ export const updateJobSeekerProfilePicture = async (req: Request, res: Response)
 
 export const addOrUpdateEducation = async (req: Request, res: Response) => {
   try {
-    const user = await saveEducation(req.body);
+    const education = await saveEducation(req.body);
     res.status(201).json({
       message: 'Education details added successfully',
-      data: user
+      data: education
     });
   } catch (error: any) {
     return res.status(500).json({
