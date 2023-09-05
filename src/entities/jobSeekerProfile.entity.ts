@@ -45,7 +45,7 @@ export class JobSeekerProfile extends BaseEntity {
   currentLocation!: Location
 
   //@OneToMany(() => KeySkills, (keySkills) => keySkills.jobSeekerProfile, { createForeignKeyConstraints: true, cascade: true })
-  @Column({ default: null })
+  @Column({ default: null, nullable: true, type: 'text' })
   keySkills!: string
 
   @OneToOne(() => Industry)
