@@ -6,6 +6,7 @@ import { CareerProfileEmployeeType } from '../entities/careerProfileEmployeeType
 import { CareerProfileJobType } from '../entities/careerProfileJobType.entity';
 import { PreferredShift } from '../entities/preferredShift.entity';
 import { CareerProfilePreferredLocations } from '../entities/careerProfilePreferredLocations.entity';
+import { log } from 'console';
 
 type Params = {
   userId: number,
@@ -28,13 +29,14 @@ export const updateJobSeekerProfile = async (id: number, jobSeekerParams: JobSee
   console.log("jobSeekerParams=============", jobSeekerParams);
 
   try {
+
     const jobSeekerProfileRepository = AppDataSource.getRepository(JobSeekerProfile);
     await jobSeekerProfileRepository.update(id, {
       ...(jobSeekerParams.completedSections && { completedSections: jobSeekerParams.completedSections }),
       ...(jobSeekerParams.currentLocation && { currentLocation: jobSeekerParams.currentLocation }),
       ...(jobSeekerParams.noticePeriod && { noticePeriod: jobSeekerParams.noticePeriod }),
-      ...(jobSeekerParams.profilePicturePath && { profilePicture: jobSeekerParams.profilePicturePath }),
-      ...(jobSeekerParams.profilePictureFile && { profilePicture: jobSeekerParams.profilePictureFile }),
+      ...({ profilePicturePath: jobSeekerParams.profilePicturePath }),
+      ...({ profilePictureFile: jobSeekerParams.profilePictureFile }),
       ...({ resumePath: jobSeekerParams.resumePath }),
       ...({ resumeFile: jobSeekerParams.resumeFile }),
       ...({ resumeHeadline: jobSeekerParams.resumeHeadline }),
