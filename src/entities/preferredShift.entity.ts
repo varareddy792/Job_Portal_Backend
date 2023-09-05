@@ -2,7 +2,7 @@ import { Entity, PrimaryGeneratedColumn, Column, BaseEntity, ManyToOne } from 't
 import { CareerProfile } from './careerProfile.entity';
 
 @Entity()
-export class Location extends BaseEntity {
+export class PreferredShift extends BaseEntity {
   @PrimaryGeneratedColumn()
   id!: number
 

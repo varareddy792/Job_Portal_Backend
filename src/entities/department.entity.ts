@@ -11,5 +11,6 @@ export class Department extends BaseEntity {
 
   @Column()
   status!: boolean
+  jobSeekerProfile: any;
 
 }

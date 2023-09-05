@@ -55,6 +55,17 @@ import { Country } from '../entities/country.entity';
 import CountrySeeder from '../entities/seed/Country.seeder';
 import PassoutYearSeeder from '../entities/seed/PassOutYear.seeder';
 import { PassOutYear } from '../entities/passOutYear.entity';
+import { EmployeeType } from '../entities/employeeType.entity';
+import EmployeeTypeSeeder from '../entities/seed/EmployeeType.seeder';
+import { JobType } from '../entities/jobType.entity';
+import JobTypeSeeder from '../entities/seed/JobType.seeder';
+import { PreferredShift } from '../entities/preferredShift.entity';
+import PreferredShiftSeeder from '../entities/seed/PreferredShift.seeder';
+import { CareerProfile } from '../entities/careerProfile.entity';
+import { CareerProfileEmployeeType } from '../entities/careerProfileEmployeeType.entity';
+import { CareerProfileJobType } from '../entities/careerProfileJobType.entity';
+import { CareerProfilePreferredLocations } from '../entities/careerProfilePreferredLocations.entity';
+import { CareerProfilePreferredShift } from '../entities/careerProfilePreferredShift.entity';
 
 if (process.env.DB_NAME === undefined) {
   throw new Error('Dbname cannot be undefined')
@@ -91,9 +102,9 @@ const options: DataSourceOptions & SeederOptions = {
   password: process.env.DB_PASSWORD,
   database: process.env.DB_NAME,
   synchronize: true,
-  // logging: true,
-  entities: [User, JobSeekerProfile, Employment, TotalExpYear, TotalExpMonth, Company, JobTitle, Currency, State, City, NoticePeriod, AvailabilityToJoin, KeySkills, Industry, Department, RoleCategory, JobRole, Education, HighestQualification, Course, Specialization, CourseType, UniversityInstitute, Gender, Location, EducationType, Country, City, PassOutYear],
-  seeds: [TotalExpYearSeeder, TotalExpMonthSeeder, CompanySeeder, JobTitleSeeder, CurrencySeeder, StateSeeder, NoticePeriodSeeder, AvailabilityToJoinSeeder, KeySkillsSeeder, IndustrySeeder, DepartmentSeeder, RoleCategorySeeder, JobRoleSeeder, HighestQualificationSeeder, CourseSeeder, SpecializationSeeder, CourseTypeSeeder, UniversityInstituteSeeder, GenderSeeder, LocationSeeder, EducationTypeSeeder, CountrySeeder, CitySeeder, PassoutYearSeeder],
+  logging: true,
+  entities: [User, JobSeekerProfile, Employment, TotalExpYear, TotalExpMonth, Company, JobTitle, Currency, State, City, NoticePeriod, AvailabilityToJoin, KeySkills, Industry, Department, RoleCategory, JobRole, Education, HighestQualification, Course, Specialization, CourseType, UniversityInstitute, Gender, Location, EducationType, Country, City, PassOutYear, EmployeeType, JobType, PreferredShift, CareerProfile, CareerProfileEmployeeType, CareerProfileJobType, CareerProfilePreferredLocations, CareerProfilePreferredShift],
+  seeds: [TotalExpYearSeeder, TotalExpMonthSeeder, CompanySeeder, JobTitleSeeder, CurrencySeeder, StateSeeder, NoticePeriodSeeder, AvailabilityToJoinSeeder, KeySkillsSeeder, IndustrySeeder, DepartmentSeeder, RoleCategorySeeder, JobRoleSeeder, HighestQualificationSeeder, CourseSeeder, SpecializationSeeder, CourseTypeSeeder, UniversityInstituteSeeder, GenderSeeder, LocationSeeder, EducationTypeSeeder, CountrySeeder, CitySeeder, PassoutYearSeeder, EmployeeTypeSeeder, JobTypeSeeder, PreferredShiftSeeder],
   subscribers: [],
   migrations: [],
 }

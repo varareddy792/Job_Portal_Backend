@@ -24,6 +24,9 @@ import totalExpMonthRouter from './routers/totalExpMonth.router';
 import totalExpYearRouter from './routers/totalExpYear.router';
 import universityInstituteRouter from './routers/universityInstitute.router';
 import passOutYearRouter from './routers/passOutYear.router';
+import employeeTypeRouter from './routers/employeeType.router';
+import jobTypeRouter from './routers/jobType.router';
+import preferredShiftRouter from './routers/preferredShift.router';
 
 const router = Router();
 
@@ -51,6 +54,9 @@ router.use(['/state'], stateRouter);
 router.use(['/totalExpMonth'], totalExpMonthRouter);
 router.use(['/totalExpYear'], totalExpYearRouter);
 router.use(['/universityInstitute'], universityInstituteRouter);
-router.use(['/passOutYear'], passOutYearRouter)
+router.use(['/passOutYear'], passOutYearRouter);
+router.use(['/employeeType'], employeeTypeRouter);
+router.use(['/jobType'], jobTypeRouter);
+router.use(['/preferredShift'], preferredShiftRouter);
 
 export default router;   
