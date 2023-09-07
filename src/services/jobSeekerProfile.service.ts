@@ -75,7 +75,6 @@ export const saveCareerProfile = async (careerProfileParams: CareerProfile) => {
       .createQueryBuilder("careerProfile").select("careerProfile")
       .where("careerProfile.jobSeekerProfile = :careerProfile", { careerProfile: careerProfileParams.jobSeekerProfile })
       .getOne().then(res => {
-        console.log("MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM", res);
         if (res?.id) {
           console.log("UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU");
 
